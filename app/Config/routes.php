@@ -42,3 +42,5 @@
  * the built-in default routes.
  */
 	require CAKE . 'Config' . DS . 'routes.php';
+
+Router::connect('/admin', array('controller' => 'acl', 'action' => 'index', 'admin' => true));

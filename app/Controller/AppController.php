@@ -32,4 +32,21 @@ App::uses('Controller', 'Controller');
  * @link http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
+	// コンポネート指定
+	public $components = array(
+        'Acl',
+        'Auth' => array(
+            'authorize' => array(
+                'Actions' => array('actionPath' => 'controllers')
+            )
+        ),
+        'Session'
+    );
+	// ヘルパー読み込み
+	public $helpers = array('Html', 'Form', 'Session');
+	
+	// 認証処理が行われる前の処理
+	public function beforeFilter() {
+		
+	}
 }
