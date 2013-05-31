@@ -10,7 +10,7 @@
 	foreach ($data as $record){
 		echo '<tr>';
 		echo "<td>". $record['User']['id']. "</td>";
-		echo "<td>". $record['User']['username']. "</td>";
+		echo "<td>". $this->HTML->link($record['User']['username'], array('action' => 'change_user', '?' => array('user_id' => $record['User']['id']))). "</td>";
 		echo "<td>". $record['Group']['name']. "</td>";
 		echo '</tr>';
 	}

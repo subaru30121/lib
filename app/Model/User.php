@@ -70,5 +70,16 @@
 				return array('Group' => array('id' => $data['User']['group_id']));
 			}
 		}
+		
+		// パスワードのバリデート無効化
+		public function passwordValidateChange() {
+			$this->validator()->remove('new_password');
+			$this->validator()->remove('confirm_password');
+		}
+		
+		// ユーザ名のバリデート変更
+		public function usernameValidateChange() {
+			$this->validator()->remove('username', 'isUnique');
+		}
 	}
 ?>

@@ -32,7 +32,7 @@ App::uses('Controller', 'Controller');
  * @link http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
-	// �R���|�l�[�g�w��
+	// コンポネート指定
 	public $components = array(
         'Acl',
         'Auth' => array(
@@ -42,11 +42,22 @@ class AppController extends Controller {
         ),
         'Session'
     );
-	// �w���p�[�ǂݍ���
+	// ヘルパー読み込み
 	public $helpers = array('Html', 'Form', 'Session');
 	
-	// �F�؏������s����O�̏���
+	// 認証処理が行われる前の処理
 	public function beforeFilter() {
-		
+		// ACLにログインしてるとき
+		$this->Auth->loginAction = array('controller' => '../../management', 'action' => 'login');
+		// ログイン情報取得
+		$loginUser = $this->Auth->user();
+		if (!empty($loginUser)) {
+			// ログインしている場合
+			$this->Auth->authError = 'アクセス権がありません';
+		} else {
+			// ログインしていない場合
+			$this->Auth->authError = 'ログインしてください';
+		}
+		$this->Auth->loginError = 'ログインに失敗しました。';
 	}
 }

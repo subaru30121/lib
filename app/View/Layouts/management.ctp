@@ -51,7 +51,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 			<?php echo $this->HTML->link('トップページ', array('controller' => 'management', 'action' => 'index')); ?><br />
 			<?php echo $this->HTML->link('ログイン', array('controller' => 'management', 'action' => 'login')); ?><br />
 			<?php echo $this->HTML->link('ログアウト', array('controller' => 'management', 'action' => 'logout')); ?><br />
-			<?php echo $this->HTML->link('ユーザ登録', array('controller' => 'management', 'action' => 'add')); ?><br />
+			<?php echo $this->HTML->link('ユーザ登録', array('controller' => 'management', 'action' => 'add_user')); ?><br />
 			<?php echo $this->HTML->link('ユーザ一覧', array('controller' => 'management', 'action' => 'select_user')); ?><br />
 			<?php echo $this->HTML->link('グループ登録', array('controller' => 'management', 'action' => 'add_group')); ?><br />
 			<?php echo $this->HTML->link('グループ一覧', array('controller' => 'management', 'action' => 'select_group')); ?><br />
