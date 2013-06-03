@@ -1,4 +1,5 @@
 <?php
+echo $this->Html->script('test.js');
 echo $this->Form->create();
 echo $this->Form->inputs(array(
 	'legend' => __('ログイン'),

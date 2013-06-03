@@ -81,6 +81,10 @@ class ManagementController extends AppController {
 	public function select_user() {
 		$data = $this->User->find('all');
 		$this->set('data',$data);
+		if ($this->request->is('ajax')) {
+			$this->autoRender = false;
+			$this->autoLayout = false;
+		}
 	}
 	
 	// ユーザ編集
@@ -135,6 +139,19 @@ class ManagementController extends AppController {
 		} else {
 			// viewに反映
 			$this->request->data = $userData[0];
+		}
+	}
+	
+	// ユーザ削除
+	public function delete_user($id) {
+		if ($this->request->is('get')) {
+			throw new MethoudNotAllowedException();
+		}
+		$fields = array('group_id');
+		$data = array('id' => $id, 'group_id' => 3);
+		if ($this->User->save($data, false, $fields)) {
+			$this->Session->setFlash(__('削除されました'));
+			$this->redirect('./select_user');
 		}
 	}
 	
