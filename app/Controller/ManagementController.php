@@ -32,9 +32,7 @@ class ManagementController extends AppController {
 	
 	// 初期画面
 	function index() {
-		print "<pre>";
-		var_dump(AuthComponent::user());
-		print "</pre>";
+		
 	}
 
 	// ログイン処理
@@ -81,10 +79,6 @@ class ManagementController extends AppController {
 	public function select_user() {
 		$data = $this->User->find('all');
 		$this->set('data',$data);
-		if ($this->request->is('ajax')) {
-			$this->autoRender = false;
-			$this->autoLayout = false;
-		}
 	}
 	
 	// ユーザ編集
