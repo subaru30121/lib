@@ -47,17 +47,6 @@ class AppController extends Controller {
 	
 	// 認証処理が行われる前の処理
 	public function beforeFilter() {
-		// ACLにログインしてるとき
-		$this->Auth->loginAction = array('controller' => '../../management', 'action' => 'login');
-		// ログイン情報取得
-		$loginUser = $this->Auth->user();
-		if (!empty($loginUser)) {
-			// ログインしている場合
-			$this->Auth->authError = 'アクセス権がありません';
-		} else {
-			// ログインしていない場合
-			$this->Auth->authError = 'ログインしてください';
-		}
-		$this->Auth->loginError = 'ログインに失敗しました。';
+		$this->Auth->loginAction = array('controller' => 'library', 'action' => 'index');
 	}
 }
