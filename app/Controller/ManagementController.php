@@ -3,6 +3,8 @@
 // 図書管理用
 // ユーザ管理・蔵書管理
 
+App::import('Controller', 'App');
+
 class ManagementController extends AppController {
 	
 	public $name = "management";
