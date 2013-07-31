@@ -7,7 +7,7 @@ App::import('Controller', 'App');
 
 class ManagementController extends AppController {
 	
-	public $name = "management";
+	public $name = "Management";
 	
 	// モデル指定
 	public $uses = array('User', 'Group');
