@@ -180,3 +180,5 @@ CakeLog::config('error', array(
 	'file' => 'error',
 ));
 
+// 最低年
+define('MIN_YEAR', 1950);
