@@ -197,4 +197,40 @@ class BookMaster extends AppModel {
 			'order' => ''
 		)
 	);
+
+	public function beforeFind($queryData) {
+		return $this->fairingYear($queryData);
+	}
+
+	public function fairingYear($queryData) {
+		$conditions = array();
+		if (!empty($queryData['conditions']['book_name'])) {
+			$conditions['book_name LIKE'] = "%". $queryData['conditions']['book_name']. "%";
+		}
+		if (!empty($queryData['conditions']['author_name'])) {
+                        $conditions['author_name LIKE'] = "%". $queryData['conditions']['author_name']. "%";
+                 }
+
+		if (!empty($queryData['conditions']['publication_date_start']['year']) && !empty($queryData['conditions']['publication_date_end']['year'])) {
+                        // 以上・以下が設定されてる時
+			$start_year = $queryData['conditions']['publication_date_start']['year']. '-1-1';
+			$end_year = $queryData['conditions']['publication_date_end']['year']. '-12-31';
+			$conditions['publication_date BETWEEN ? AND ?'] = array($start_year , $end_year);
+                } else if (!empty($queryData['conditions']['publication_date_start']['year'])) {
+			// 以上が設定されてる時
+			$conditions['publication_date >='] = $queryData['conditions']['publication_date_start']['year']. '-1-1';
+		} else if (!empty($queryData['conditions']['publication_date_end']['year'])) {
+			// 以下が設定されてる時
+			$conditions['publication_date <='] = $queryData['conditions']['publication_date_end']['year']. '-12-31';
+		}
+
+                $queryData['conditions'] = $conditions;
+/*
+echo "<pre>";
+var_dump($queryData);
+die;
+*/
+                return $queryData;
+	}
+
 }

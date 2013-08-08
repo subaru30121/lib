@@ -21,9 +21,16 @@ class Search extends AppModel{
 			"allowEmpty" => true
 		),
 		"publication_date_end" => array(
-			"rule" => array("naturalNumber", false),
-                        "message" => "正しい年を入力してください",
-                        "allowEmpty" => true
+			"Nomal" => array(
+				"rule" => array("naturalNumber", false),
+                        	"message" => "正しい年を入力してください",
+                        	"allowEmpty" => true,
+				"last" => true
+			),
+			"Custom" => array(
+				"rule" => "rangeCheck",
+				"message" => "発行年の範囲が正しくありません",
+			)
 		)
 	);
 		
@@ -38,8 +45,22 @@ class Search extends AppModel{
 		$this->data['Search']['publication_date_end'] = $this->data['Search']['publication_date_end']['year'];
 		return $this->data['Search'];
 	}
+	
+	// バリデーションで使用
+	public function rangeCheck() {
+		// 発行年以上・以下が設定されてる時作動
+		if (!empty($this->data['Search']['publication_date_start']) && !empty($this->data['Search']['publication_date_end'])) {
+			if ($this->data['Search']['publication_date_start'] > $this->data['Search']['publication_date_end']) {
+				// 「以上」が「以下」未満だった場合
+				return false;
+			} 
+		}
+		return true;
+	}
 
 	function myValidates() {
+		// バリデートフラグ
+		$_flg = true;
 		// 分解後のデータ用
 		$_books = array();
 		$_authors = array();
@@ -54,7 +75,8 @@ class Search extends AppModel{
 			if (!$this->validates(array('fieldList' => array('book_name')))) {
 				$this->data['Search']['book_name'] = $_escape['book'];
 				LogError("蔵書名検索ワードエラー:". $_book);
-				return false;
+				$_flg = false;
+				break;
 			}
 		}
 		$this->data['Search']['book_name'] = $_escape['book'];
@@ -67,15 +89,17 @@ class Search extends AppModel{
                         if (!$this->validates(array('fieldList' => array('author_name')))) {
                                 $this->data['Search']['author_name'] = $_escape['author'];
 				LogError("著者名検索ワードエラー");
-                                return false;
+                                $_flg = false;
+				break;
                         }
                 }
                 $this->data['Search']['author_name'] = $_escape['author'];
 		// 発行年のバリデート
 		if (!$this->validates(array('fieldList' => array('publication_date_start', 'publication_date_end')))) {
-			return false;
+			$_flg = false;
 		}
-		return true;
+		
+		return $_flg;
 	}
 }
 ?>

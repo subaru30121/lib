@@ -7,6 +7,33 @@ App::uses('AppController', 'Controller');
  */
 class BookMastersController extends AppController {
 
+	public $name = "BookMasters";
+	
+	// モデル指定
+	public $uses = array('BookMaster', 'Color');
+
+	// ヘルパー指定
+	public $helpers = array('Time');
+
+	// 認証処理が行われる前の処理
+        public function beforeFilter() {
+                // レイアウト変更
+                $this->layout = 'management';
+                // Auth関連
+                $this->Auth->loginRedirect = array('controller' => 'management', 'action' => 'index');
+                $this->Auth->logoutRedirect = array('controller' => 'management', 'action' => 'login');
+                $this->Auth->loginAction = array('controller' => 'management', 'action' => 'login');
+                $loginUser = $this->Auth->user();
+                if (!empty($loginUser)) {
+                        // ログインしている場合
+                        $this->Auth->authError = 'アクセス権がありません';
+                } else {
+                        // ログインしていない場合
+                        $this->Auth->authError = 'ログインしてください';
+                }
+                $this->Auth->loginError = 'ログインに失敗しました。';
+        }
+
 /**
  * index method
  *
@@ -14,7 +41,7 @@ class BookMastersController extends AppController {
  */
 	public function index() {
 		$this->BookMaster->recursive = 0;
-		$this->set('bookMasters', $this->paginate());
+		$this->set('bookMasters', $this->paginate('BookMaster'));
 	}
 
 /**

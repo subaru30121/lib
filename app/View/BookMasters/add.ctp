@@ -1,7 +1,5 @@
-<div class="bookMasters form">
-<?php echo $this->Form->create('BookMaster'); ?>
-	<fieldset>
-		<legend><?php echo __('Add Book Master'); ?></legend>
+<h2>蔵書登録</h2>
+<?php echo $this->Form->create(); ?>
 	<?php
 		echo $this->Form->input('book_id');
 		echo $this->Form->input('claim_id');
@@ -13,19 +11,8 @@
 		echo $this->Form->input('publisher_kana');
 		echo $this->Form->input('publication_date');
 		echo $this->Form->input('status');
-		echo $this->Form->input('color_id');
+		echo $this->Form->input('color.code');
 		echo $this->Form->input('page');
 		echo $this->Form->input('annotation');
 	?>
-	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-
-		<li><?php echo $this->Html->link(__('List Book Masters'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('List Colors'), array('controller' => 'colors', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Color'), array('controller' => 'colors', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
+<?php echo $this->Form->end('登録'); ?>
