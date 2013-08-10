@@ -20,26 +20,36 @@
 <body>
 	<div id="container">
 		<div id="header">
-			
-		</div>
+			<div id="title">
+				横浜リハビリテーション専門学校図書室サイト
+			</div> <!-- #title -->
+			<div id="menu">
+							<!-- リンク表示 -->
+			<div id="menuLog">
+			<?php echo $this->HTML->link('トップページ', array('controller' => 'management', 'action' => 'index')); ?><br />
+			<?php echo $this->HTML->link('ログイン', array('controller' => 'management', 'action' => 'login')); ?><br />
+			<?php echo $this->HTML->link('ログアウト', array('controller' => 'management', 'action' => 'logout')); ?><br />
+			</div>
+			<div id="menuUserGroup">
+			<?php echo $this->HTML->link('ユーザ登録', array('controller' => 'management', 'action' => 'add_user')); ?><br />
+			<?php echo $this->HTML->link('ユーザ一覧', array('controller' => 'management', 'action' => 'select_user')); ?><br />
+			<?php echo $this->HTML->link('グループ登録', array('controller' => 'management', 'action' => 'add_group')); ?><br />
+			<?php echo $this->HTML->link('グループ一覧', array('controller' => 'management', 'action' => 'select_group')); ?><br />
+			</div>
+			<div id="menuBock">
+			<?php echo $this->HTML->link('蔵書登録', array('controller' => 'bookMasters', 'action' => 'add')); ?><br />
+			<?php echo $this->HTML->link('蔵書一覧', array('controller' => 'bookMasters', 'action' => 'index')); ?> <br />
+			</div>
+			</div> <!-- #menu -->
+		</div> <!-- #header -->
 		<div id="content">
 
 			<?php echo $this->Session->flash(); ?>
 			<!-- ここが本文 -->
 			<?php echo $this->fetch('content'); ?>
 			<?php echo $this->session->flash('auth'); ?>
-			<!-- リンク表示 -->
-			<?php echo $this->HTML->link('トップページ', array('controller' => 'management', 'action' => 'index')); ?><br />
-			<?php echo $this->HTML->link('ログイン', array('controller' => 'management', 'action' => 'login')); ?><br />
-			<?php echo $this->HTML->link('ログアウト', array('controller' => 'management', 'action' => 'logout')); ?><br />
-			<?php echo $this->HTML->link('ユーザ登録', array('controller' => 'management', 'action' => 'add_user')); ?><br />
-			<?php echo $this->HTML->link('ユーザ一覧', array('controller' => 'management', 'action' => 'select_user')); ?><br />
-			<?php echo $this->HTML->link('グループ登録', array('controller' => 'management', 'action' => 'add_group')); ?><br />
-			<?php echo $this->HTML->link('グループ一覧', array('controller' => 'management', 'action' => 'select_group')); ?><br />
-			<?php echo $this->HTML->link('蔵書登録', array('controller' => 'bookMasters', 'action' => 'add')); ?><br />
-			<?php echo $this->HTML->link('蔵書一覧', array('controller' => 'bookMasters', 'action' => 'index')); ?> <br />
-		</div>
+		</div> <!-- #content -->
 		<?php echo $this->element('sql_dump'); ?>
-	</div>
+	</div> <!-- #container -->
 </body>
 </html>

@@ -23,8 +23,8 @@
 
 /** General Style Info **/
 body {
-	background: #003d4c;
-	color: #fff;
+	background: #CF2225;
+/*	color: #fff; */
 	font-family:'lucida grande',verdana,helvetica,arial,sans-serif;
 	font-size:90%;
 	margin: 0;
@@ -74,13 +74,19 @@ p {
 
 /** Layout **/
 #container {
+	width: 950px;
+	margin: 0 auto;
 	text-align: left;
 }
 
 #header{
+	height: 100px;
 	padding: 10px 20px;
+/*	background-color: #F0DBAF; */
+	background-image: url('../img/header_b.png');
 }
-#header h1 {
+
+/* #header h1 {
 	line-height:20px;
 	background: #003d4c url('../img/cake.icon.png') no-repeat left;
 	color: #fff;
@@ -96,9 +102,37 @@ p {
 	color: #fff;
 	background: #003d4c;
 	text-decoration: underline;
+} */
+
+#title {
+	width: 350px;
+	float: left;
 }
+
+#menu{
+	height: 100%;
+	float: left;
+}
+
+#menuLog{
+	margin: 2px 5px;
+	float: left;
+}
+
+#menuUserGroup{
+	margin: 2px 5px;
+	float: left;
+}
+
+#menuBock{
+	margin: 2px 5px;
+	float: left;
+}
+
 #content{
-	background: #fff;
+	height: 400px;
+	background-color: #FDF6CB;
+	background-image: url('../img/content_b.png');
 	clear: both;
 	color: #333;
 	padding: 10px 20px 40px 20px;
