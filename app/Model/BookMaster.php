@@ -199,17 +199,13 @@ class BookMaster extends AppModel {
 	);
 
 	public function beforeFind($queryData) {
-		return $this->fairingYear($queryData);
+		$queryData = $this->fairingYear($queryData);
+		return $this->cutData($queryData);
 	}
 
+	// 発行年設定
 	public function fairingYear($queryData) {
 		$conditions = array();
-		if (!empty($queryData['conditions']['book_name'])) {
-			$conditions['book_name LIKE'] = "%". $queryData['conditions']['book_name']. "%";
-		}
-		if (!empty($queryData['conditions']['author_name'])) {
-                        $conditions['author_name LIKE'] = "%". $queryData['conditions']['author_name']. "%";
-                 }
 
 		if (!empty($queryData['conditions']['publication_date_start']['year']) && !empty($queryData['conditions']['publication_date_end']['year'])) {
                         // 以上・以下が設定されてる時
@@ -223,14 +219,50 @@ class BookMaster extends AppModel {
 			// 以下が設定されてる時
 			$conditions['publication_date <='] = $queryData['conditions']['publication_date_end']['year']. '-12-31';
 		}
+		
+		unset($queryData['conditions']['publication_date_start']);
+		unset($queryData['conditions']['publication_date_end']);
 
-                $queryData['conditions'] = $conditions;
-/*
-echo "<pre>";
-var_dump($queryData);
-die;
-*/
+                $queryData['conditions'] = array_merge($queryData['conditions'], $conditions);
+
                 return $queryData;
 	}
 
+	//　蔵書名・著者名設定
+	public function cutData($queryData) {
+		$conditions = array();
+		$_books = array();
+		$_acthors = array();
+		
+		if (!empty($queryData['conditions']['book_name'])) {
+			// 蔵書名が入力されてる時
+			// 半角スペースで統一
+                	$queryData['conditions']['book_name'] = str_replace("　", " ", $queryData['conditions']['book_name']);
+			// 半角スペースで区切る
+			$_books = explode(" ", $queryData['conditions']['book_name']);
+			
+			foreach($_books as $_book) {
+				$conditions['AND'][] = array('book_name LIKE' => '%'. $_book. '%');
+			}
+		}
+
+		if (!empty($queryData['conditions']['author_name'])) {
+                        // 著者名が入力されてる時
+                        // 半角スペースで統一
+                        $queryData['conditions']['author_name'] = str_replace("　", " ", $queryData['conditions']['author_name']);
+                        // 半角スペースで区切る
+                        $_authors = explode(" ", $queryData['conditions']['author_name']);
+
+                        foreach($_authors as $_author) {
+                                $conditions['AND'][] = array('author_name LIKE' => '%'. $_author. '%');
+                        }
+                }	
+		
+		unset($queryData['conditions']['book_name']);
+		unset($queryData['conditions']['author_name']);
+
+		$queryData['conditions'] = array_merge($queryData['conditions'], $conditions);
+
+		return $queryData;
+	}
 }
