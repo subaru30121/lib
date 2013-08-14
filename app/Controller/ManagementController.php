@@ -34,12 +34,12 @@ class ManagementController extends AppController {
 	
 	// 初期画面
 	function index() {
-		
+		$this->set('title_for_layout', "管理ページ");
 	}
 
 	// ログイン処理
 	public function login(){
-		$this->set("title_for_layout","Login");
+		$this->set("title_for_layout","ログイン");
 		if (!empty($this->request->data)) {
 			if($this->Auth->login()){
 				return	$this->redirect($this->Auth->redirect());
@@ -56,6 +56,7 @@ class ManagementController extends AppController {
 	
 	// ユーザー登録
 	public function add_user() {
+		$this->set('title_for_layout', "ユーザ登録");
 		// セレクトボックス生成
 		$this->set('selectBox', $this->Group->find('list', array('fields'=>array('id','name'))));
 		if (!empty($this->request->data)) {
@@ -79,12 +80,14 @@ class ManagementController extends AppController {
 	
 	// ユーザ一覧
 	public function select_user() {
+		$this->set('title_for_layout', "ユーザ一覧");
 		$data = $this->User->find('all');
 		$this->set('data',$data);
 	}
 	
 	// ユーザ編集
 	public function change_user() {
+		$this->set('title_for_layout', "ユーザ編集");
 		if (!preg_match('/^[1-9][0-9]*$/', $this->params['url']['user_id'])) {
 			// 変なもんだったら一覧に戻す
 			$this->redirect('./select_user');
@@ -140,6 +143,7 @@ class ManagementController extends AppController {
 	
 	// ユーザ削除
 	public function delete_user($id) {
+		$this->set('title_for_layout', "ユーザ削除");
 		if ($this->request->is('get')) {
 			throw new MethoudNotAllowedException();
 		}
@@ -153,6 +157,7 @@ class ManagementController extends AppController {
 	
 	// グループ登録
 	public function add_group() {
+		$this->set('title_for_layout', "グループ登録");
 		if (!empty($this->data)) {
 			// DBへ登録
 			if ($this->Group->save($this->request->data['Group'])) {
@@ -165,6 +170,7 @@ class ManagementController extends AppController {
 	
 	// グループ一覧
 	public function select_group() {
+		$this->set('title_for_layout', "グループ一覧");
 		$data = $this->Group->find('all');
 		$this->set('data',$data);
 	}

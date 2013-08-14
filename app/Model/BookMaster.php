@@ -30,33 +30,31 @@ class BookMaster extends AppModel {
 		'book_id' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+				'message' => '図書番号は必須項目です',
+				'last' => true,
 			),
-			'userdefined' => array(
-				'rule' => array('userdefined'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			'numeric' => array(
+				'rule' => array('numeric'),
+				'message' => '数字を入力してください',
+			),
+			'isUnique' => array(
+				'rule' => array('isUnique'),
+				'message' => 'それはすでに登録済みです',
+				'on' => 'create',
 			),
 		),
 		'claim_id' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
+				'message' => '請求番号は必須項目です',
 				//'allowEmpty' => false,
 				//'required' => false,
-				//'last' => false, // Stop validation after this rule
+				'last' => true, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 			'maxlength' => array(
-				'rule' => array('maxlength'),
-				//'message' => 'Your custom message here',
+				'rule' => array('maxlength', 20),
+				'message' => '請求番号は21文字以上入力できません',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -66,15 +64,15 @@ class BookMaster extends AppModel {
 		'book_name' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
+				'message' => '蔵書名は必須項目です',
 				//'allowEmpty' => false,
 				//'required' => false,
-				//'last' => false, // Stop validation after this rule
+				'last' => true, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 			'maxlength' => array(
-				'rule' => array('maxlength'),
-				//'message' => 'Your custom message here',
+				'rule' => array('maxlength', 100),
+				'message' => '蔵書名は100文字以上入力できません',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -83,9 +81,9 @@ class BookMaster extends AppModel {
 		),
 		'book_kana' => array(
 			'maxlength' => array(
-				'rule' => array('maxlength'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
+				'rule' => array('maxlength', 300),
+				'message' => '蔵書名かなは300文字以上入力できません',
+				'allowEmpty' => true,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
@@ -93,9 +91,9 @@ class BookMaster extends AppModel {
 		),
 		'author_name' => array(
 			'maxlength' => array(
-				'rule' => array('maxlength'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
+				'rule' => array('maxlength', 100),
+				'message' => '著者名は100文字以上入力できません',
+				'allowEmpty' => true,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
@@ -103,9 +101,9 @@ class BookMaster extends AppModel {
 		),
 		'author_kana' => array(
 			'maxlength' => array(
-				'rule' => array('maxlength'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
+				'rule' => array('maxlength', 300),
+				'message' => '著者名かなは300文字以上入力できません',
+				'allowEmpty' => true,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
@@ -113,9 +111,9 @@ class BookMaster extends AppModel {
 		),
 		'publisher_name' => array(
 			'maxlength' => array(
-				'rule' => array('maxlength'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
+				'rule' => array('maxlength', 100),
+				'message' => '出版社名は100文字以上入力できません',
+				'allowEmpty' => true,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
@@ -123,9 +121,9 @@ class BookMaster extends AppModel {
 		),
 		'publisher_kana' => array(
 			'maxlength' => array(
-				'rule' => array('maxlength'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
+				'rule' => array('maxlength', 300),
+				'message' => '出版社名かなは300文字以上入力できません',
+				'allowEmpty' => true,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
@@ -133,9 +131,9 @@ class BookMaster extends AppModel {
 		),
 		'publication_date' => array(
 			'date' => array(
-				'rule' => array('date'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
+				'rule' => array('date', 'ymd'),
+				'message' => '年月日を入力してください',
+				'allowEmpty' => true,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
@@ -144,26 +142,26 @@ class BookMaster extends AppModel {
 		'status' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
+				'message' => '状態を選択してください',
 				//'allowEmpty' => false,
 				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+				'last' => true, // Stop validation after this rule
+				'on' => 'update', // Limit validation to 'create' or 'update' operations
 			),
 			'inlist' => array(
-				'rule' => array('inlist'),
-				//'message' => 'Your custom message here',
+				'rule' => array('inlist', array(0, 1, 2)),
+				'message' => '正しい状態を選択してください',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+				'on' => 'update', // Limit validation to 'create' or 'update' operations
 			),
 		),
 		'page' => array(
 			'naturalnumber' => array(
 				'rule' => array('naturalnumber'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
+				'message' => '数字を入力してください',
+				'allowEmpty' => true,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
@@ -171,9 +169,9 @@ class BookMaster extends AppModel {
 		),
 		'annotation' => array(
 			'maxlength' => array(
-				'rule' => array('maxlength'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
+				'rule' => array('maxlength', 2000),
+				'message' => '注釈は2000文字以上入力できません',
+				'allowEmpty' => true,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
@@ -197,6 +195,11 @@ class BookMaster extends AppModel {
 			'order' => ''
 		)
 	);
+
+	public function beforeValidate($options=array()) {
+		$this->data['BookMaster']['page'] = mb_convert_kana($this->data['BookMaster']['page'], 'n', 'UTF-8');
+		return true;
+	}
 
 	public function beforeFind($queryData) {
 		$queryData = $this->fairingYear($queryData);

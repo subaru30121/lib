@@ -1,4 +1,8 @@
 <h2>蔵書管理</h2>
+
+<?php echo $this->Paginator->counter(array('model' => 'BookMaster', 'format' => '該当するデータが{:count}件見つかりました')); ?><br />
+<?php echo $this->Paginator->counter(array('model' => 'BookMaster', 'format' => '現在、{:start}件目から{:end}件目まで表示しています')); ?>
+
 <table>
 <tr>
 		<th><?php echo $this->Paginator->sort('id', "ID"); ?></th>
@@ -40,3 +44,7 @@ foreach ($bookMasters as $bookMaster): ?>
 </tr>
 <?php endforeach; ?>
 </table>
+
+<?php echo $this->Paginator->prev('<< 戻る'); ?>
+<?php echo $this->Paginator->numbers(); ?>
+<?php echo $this->Paginator->next('次へ >>'); ?>

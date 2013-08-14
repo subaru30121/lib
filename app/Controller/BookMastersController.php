@@ -40,6 +40,7 @@ class BookMastersController extends AppController {
  * @return void
  */
 	public function index() {
+		$this->set('title_for_layout', "蔵書一覧");
 		$this->BookMaster->recursive = 0;
 		$this->set('bookMasters', $this->paginate('BookMaster'));
 	}
@@ -52,9 +53,10 @@ class BookMastersController extends AppController {
  * @return void
  */
 	public function view($id = null) {
+		$this->set('title_for_layout', "蔵書詳細");
 		$this->BookMaster->id = $id;
 		if (!$this->BookMaster->exists()) {
-			throw new NotFoundException(__('Invalid book master'));
+			throw new NotFoundException('蔵書は見つかりませんでした。');
 		}
 		$this->set('bookMaster', $this->BookMaster->read(null, $id));
 	}
@@ -65,13 +67,20 @@ class BookMastersController extends AppController {
  * @return void
  */
 	public function add() {
+		$this->set('title_for_layout', "蔵書追加");
 		if ($this->request->is('post')) {
+			$this->Color->create();
+			$this->Color->set($this->request->data['Color']);
+			if ($this->Color->isUnique(array('code'))) {
+				$this->Color->saveAll($this->request->data['Color']);
+				$this->request->data['BookMaster']['color_id'] = $this->Color->getLastInsertID();
+			}
 			$this->BookMaster->create();
-			if ($this->BookMaster->save($this->request->data)) {
-				$this->Session->setFlash(__('The book master has been saved'));
+			if ($this->BookMaster->saveAll($this->request->data['BookMaster'])) {
+				$this->Session->setFlash('登録に成功しました。');
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The book master could not be saved. Please, try again.'));
+				$this->Session->setFlash('蔵書登録に失敗しました。登録事項を確認の上もう一度登録してください。');
 			}
 		}
 		$colors = $this->BookMaster->Color->find('list');
@@ -86,16 +95,17 @@ class BookMastersController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
+		$this->set('title_for_layout', "蔵書編集");
 		$this->BookMaster->id = $id;
 		if (!$this->BookMaster->exists()) {
-			throw new NotFoundException(__('Invalid book master'));
+			throw new NotFoundException('蔵書は見つかりませんでした');
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->BookMaster->save($this->request->data)) {
-				$this->Session->setFlash(__('The book master has been saved'));
+				$this->Session->setFlash('蔵書データの更新は成功しました');
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The book master could not be saved. Please, try again.'));
+				$this->Session->setFlash('蔵書データの更新に失敗しました。入力事項を確認の上もう一度登録してください。');
 			}
 		} else {
 			$this->request->data = $this->BookMaster->read(null, $id);
@@ -113,6 +123,7 @@ class BookMastersController extends AppController {
  * @return void
  */
 	public function delete($id = null) {
+		$this->set('title_for_layout', "蔵書破棄");
 		if (!$this->request->is('post')) {
 			throw new MethodNotAllowedException();
 		}
