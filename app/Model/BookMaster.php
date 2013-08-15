@@ -198,7 +198,23 @@ class BookMaster extends AppModel {
 
 	public function beforeValidate($options=array()) {
 		$this->data['BookMaster']['page'] = mb_convert_kana($this->data['BookMaster']['page'], 'n', 'UTF-8');
+		//pr($this->data);
+		//die;
 		return true;
+	}
+
+	public function createYear($data) {
+		if (!empty($data['year']) || !empty($data['month']) || !empty($data['day'])) {
+			if (!empty($data['year'])) {
+                		if (empty($data['month']))	$data['month'] = '01';
+                		if (empty($data['day'])) 	$data['day'] = '01';
+			} else {
+				$data['year'] = '0000';
+				if (empty($data['month']))      $data['month'] = '00';
+                                if (empty($data['day']))        $data['day'] = '00';
+			}
+		}
+                return $this->deconstruct('publication_date', $data);
 	}
 
 	public function beforeFind($queryData) {

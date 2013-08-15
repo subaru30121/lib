@@ -13,6 +13,7 @@
 		echo $this->Form->input('publisher_name', array('label' => '出版社名'));
 		echo $this->Form->input('publisher_kana', array('label' => '出版社名かな'));
 		echo $this->Form->input('publication_date', array('type' => 'datetime', 'dateFormat' => 'YMD', 'timeFormat' => 'none', 'monthNames' => false, 'minYear' => MIN_YEAR, 'maxYear' => date('Y'), 'empty' => true, 'label' => '発行年'));
+		echo $this->Form->input('category', array('label' => '分類'));
 		echo $this->Form->input('Color.code', array('type' => 'text', 'label' => 'シールの色', 'class' => 'html5jp-cpick [coloring:true]', 'id' => 't2'));
 		echo $this->Form->input('page', array('type' => 'text', 'label' => 'ページ数'));
 		echo $this->Form->input('annotation', array('type' => 'textarea', 'label' => '注釈'));

@@ -69,12 +69,19 @@ class BookMastersController extends AppController {
 	public function add() {
 		$this->set('title_for_layout', "蔵書追加");
 		if ($this->request->is('post')) {
-			$this->Color->create();
-			$this->Color->set($this->request->data['Color']);
-			if ($this->Color->isUnique(array('code'))) {
-				$this->Color->saveAll($this->request->data['Color']);
-				$this->request->data['BookMaster']['color_id'] = $this->Color->getLastInsertID();
+			if (!empty($this->request->data['Color']['code'])) {
+				$this->Color->create();
+				$this->Color->set($this->request->data['Color']);
+				if ($this->Color->isUnique(array('code'))) {
+					$this->Color->saveAll($this->request->data['Color']);
+					$this->request->data['BookMaster']['color_id'] = $this->Color->getLastInsertID();
+				} else {
+					$_color_data = $this->Color->find('first', array('conditions' => array('code' => $this->request->data['Color']['code'])));
+					$this->request->data['BookMaster']['color_id'] = $_color_data['Color']['id'];
+				}
 			}
+			// 発行年の整形
+			$this->request->data['BookMaster']['publication_date'] = $this->BookMaster->createYear($this->request->data['BookMaster']['publication_date']);
 			$this->BookMaster->create();
 			if ($this->BookMaster->saveAll($this->request->data['BookMaster'])) {
 				$this->Session->setFlash('登録に成功しました。');
