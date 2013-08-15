@@ -241,6 +241,8 @@ class BookMaster extends AppModel {
 		
 		unset($queryData['conditions']['publication_date_start']);
 		unset($queryData['conditions']['publication_date_end']);
+		
+		$conditions['status'] = 1;
 
                 $queryData['conditions'] = array_merge($queryData['conditions'], $conditions);
 
@@ -283,5 +285,28 @@ class BookMaster extends AppModel {
 		$queryData['conditions'] = array_merge($queryData['conditions'], $conditions);
 
 		return $queryData;
+	}
+	
+	public function delete($id = null, $cascade = true) {
+		// 0 破棄済み
+		return $this->save(array('id' => $id, 'status' => '0'), false, array('id', 'status'));
+	}
+	
+	public function afterFind($results, $primary = false) {
+		$data = array();
+		foreach($results as $result) {
+			switch($result['BookMaster']['status']) {
+				case 0:
+					$result['BookMaster']['status'] = '破棄済み';
+					break;
+				case 1:
+					$result['BookMaster']['status'] = '閲覧可能';
+					break;
+				default:
+					$result['BookMaster']['status'] = '異常あり';
+			}
+			$data[] = $result;
+		}
+		return $data;
 	}
 }

@@ -1,33 +1,20 @@
-<div class="bookMasters form">
-<?php echo $this->Form->create('BookMaster'); ?>
+<?php echo $this->Form->create(); ?>
 	<fieldset>
-		<legend><?php echo __('Edit Book Master'); ?></legend>
+		<legend>蔵書編集</legend>
 	<?php
-		echo $this->Form->input('id');
-		echo $this->Form->input('book_id');
-		echo $this->Form->input('claim_id');
-		echo $this->Form->input('book_name');
-		echo $this->Form->input('book_kana');
-		echo $this->Form->input('author_name');
-		echo $this->Form->input('author_kana');
-		echo $this->Form->input('publisher_name');
-		echo $this->Form->input('publisher_kana');
-		echo $this->Form->input('publication_date');
-		echo $this->Form->input('status');
-		echo $this->Form->input('color_id');
-		echo $this->Form->input('page');
-		echo $this->Form->input('annotation');
+		echo $this->Form->input('book_id', array('type' => 'text', 'label' => '[図書番号]'));
+                echo $this->Form->input('claim_id', array('type' => 'text', 'label' => '[請求番号]'));
+                echo $this->Form->input('book_name', array('label' => '[蔵書名]'));
+                echo $this->Form->input('book_kana', array('label' => '蔵書名かな'));
+                echo $this->Form->input('author_name', array('label' => '著者名'));
+                echo $this->Form->input('author_kana', array('label' => '著者名かな'));
+                echo $this->Form->input('publisher_name', array('label' => '出版社名'));
+                echo $this->Form->input('publisher_kana', array('label' => '出版社名かな'));
+                echo $this->Form->input('publication_date', array('type' => 'datetime', 'dateFormat' => 'YMD', 'timeFormat' => 'none', 'monthNames' => false, 'minYear' => MIN_YEAR, 'maxYear' => date('Y'), 'empty' => true, 'label' => '発行年'));
+                echo $this->Form->input('category', array('label' => '分類'));
+                echo $this->Form->input('Color.code', array('type' => 'text', 'label' => 'シールの色', 'class' => 'html5jp-cpick [coloring:true]', 'id' => 't2'));
+                echo $this->Form->input('page', array('type' => 'text', 'label' => 'ページ数'));
+                echo $this->Form->input('annotation', array('type' => 'textarea', 'label' => '注釈'));
 	?>
 	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-
-		<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('BookMaster.id')), null, __('Are you sure you want to delete # %s?', $this->Form->value('BookMaster.id'))); ?></li>
-		<li><?php echo $this->Html->link(__('List Book Masters'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('List Colors'), array('controller' => 'colors', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Color'), array('controller' => 'colors', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
+<?php echo $this->Form->end('編集'); ?>

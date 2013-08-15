@@ -136,13 +136,13 @@ class BookMastersController extends AppController {
 		}
 		$this->BookMaster->id = $id;
 		if (!$this->BookMaster->exists()) {
-			throw new NotFoundException(__('Invalid book master'));
+			throw new NotFoundException('蔵書は見つかりませんでした');
 		}
-		if ($this->BookMaster->delete()) {
-			$this->Session->setFlash(__('Book master deleted'));
+		if ($this->BookMaster->delete($id)) {
+			$this->Session->setFlash('蔵書は削除されました');
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Book master was not deleted'));
+		$this->Session->setFlash('蔵書は削除されませんでした。データを確認の上もう一度削除してください。');
 		$this->redirect(array('action' => 'index'));
 	}
 }

@@ -28,7 +28,7 @@ foreach ($bookMasters as $bookMaster): ?>
 	<td><?php echo h($bookMaster['BookMaster']['id']); ?>&nbsp;</td>
 	<td><?php echo h($bookMaster['BookMaster']['book_id']); ?>&nbsp;</td>
 	<td><?php echo h($bookMaster['BookMaster']['claim_id']); ?>&nbsp;</td>
-	<td><?php echo h($bookMaster['BookMaster']['book_name']); ?>&nbsp;</td>
+	<td><?php echo $this->Html->link(h($bookMaster['BookMaster']['book_name']), array('action' => 'view', h($bookMaster['BookMaster']['id']))); ?>&nbsp;</td>
 	<td><?php echo h($bookMaster['BookMaster']['book_kana']); ?>&nbsp;</td>
 	<td><?php echo h($bookMaster['BookMaster']['author_name']); ?>&nbsp;</td>
 	<td><?php echo h($bookMaster['BookMaster']['author_kana']); ?>&nbsp;</td>
