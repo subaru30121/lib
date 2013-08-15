@@ -21,7 +21,7 @@
 	<div id="container">
 		<div id="header">
 			<div id="title">
-				横浜リハビリテーション専門学校図書室サイト
+				<img src="../img/title.png">
 			</div> <!-- #title -->
 			<div id="menu">
 							<!-- リンク表示 -->
