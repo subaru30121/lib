@@ -1,4 +1,3 @@
-<h2>一覧</h2>
 <!-- 検索フォーム -->
 <?php echo $this->Form->create('BookMaster'); ?>
 <?php echo $this->Form->input('book_name', array('label' => '蔵書名')); ?>
@@ -6,13 +5,13 @@
 <?php echo $this->Form->input('author_name', array('label' => '著者名')); ?>
 <?php echo $this->Form->error('Search.author_name'); ?>
 <p>発行年(西暦)　　<?php echo $this->Form->year('publication_date_start', MIN_YEAR, date('Y')); ?>　年以上　<?php echo $this->Form->year('publication_date_end', MIN_YEAR, date('Y')); ?>　年以下</p>
+<?php echo $this->Form->end('検索開始'); ?>
 <?php echo $this->Form->error('Search.publication_date_start'); ?>
 <?php echo $this->Form->error('Search.publication_date_end'); ?>
 <br />
-<?php echo $this->Form->end('検索開始'); ?>
 <!-- 検索フォームここまで -->
-<hr />
-
+</div> <!-- #header -->
+<div id="content">
 <?php echo $this->Paginator->counter(array('model' => 'BookMaster', 'format' => '該当するデータが{:count}件見つかりました')); ?><br />
 <?php echo $this->Paginator->counter(array('model' => 'BookMaster', 'format' => '現在、{:start}件目から{:end}件目まで表示しています')); ?>
 <table>
@@ -39,5 +38,3 @@
 <?php echo $this->Paginator->numbers(); ?> 
 <?php echo $this->Paginator->next('次へ >>'); ?> 
 <br /><br />
-<hr />
-<br />

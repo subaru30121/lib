@@ -15,21 +15,20 @@
 		echo $this->fetch('css');
 		echo $this->fetch('script');
 	?>
+	<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 </head>
-<body>
+<body id="default">
 	<div id="container">
 		<div id="header">
-			
-		</div>
-		<div id="content">
-
-			<?php echo $this->Session->flash(); ?>
+			<div id="title">
+				<?php echo $this->Html->image('title_d.png'); ?>
+			</div> <!-- #title -->
+			<div id="clear"></div>
 			<!-- ここが本文 -->
 			<?php echo $this->fetch('content'); ?>
-			<!-- リンク表示 -->
-			<?php echo $this->HTML->link('トップページ', array('controller' => 'library', 'action' => 'index')); ?><br />
-		</div>
+		</div> <!-- #content -->
 		<?php echo $this->element('sql_dump'); ?>
+		<div id="footer"></div>
 	</div>
 </body>
 </html>
