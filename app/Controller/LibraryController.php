@@ -57,6 +57,10 @@ class LibraryController extends AppController {
 
 	// 蔵書詳細
 	public function view($id = null) {
+		if ($this->request->is('post')) {
+			// 検索フォームが使用された場合
+			$this->setAction('index');
+		}
 		$this->set('title_for_layout', "詳細ページ");
                 $this->BookMaster->id = $id;
                 if (!$this->BookMaster->exists()) {
