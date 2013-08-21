@@ -82,6 +82,10 @@ class BookMastersController extends AppController {
 			}
 			// 発行年の整形
 			$this->request->data['BookMaster']['publication_date'] = $this->BookMaster->createYear($this->request->data['BookMaster']['publication_date']);
+			// 分類の検索
+			if (empty($this->request->data['BookMaster']['category'])) {
+				$this->request->data['BookMaster']['category'] = $this->BookMaster->categorySearch($this->request->data['BookMaster']['claim_id']);
+			}
 			$this->BookMaster->create();
 			if ($this->BookMaster->saveAll($this->request->data['BookMaster'])) {
 				$this->Session->setFlash('登録に成功しました。');

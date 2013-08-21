@@ -197,10 +197,32 @@ class BookMaster extends AppModel {
 	);
 
 	public function beforeValidate($options=array()) {
+		// ページ数の半角化
 		$this->data['BookMaster']['page'] = mb_convert_kana($this->data['BookMaster']['page'], 'n', 'UTF-8');
-		//pr($this->data);
-		//die;
 		return true;
+	}
+
+	// 分類の検索
+	public function categorySearch($number = null) {
+		$category = false;
+		// 請求番号からNDC9を取り出す
+		if ($key = substr($number, 0, strpos($number, '-'))) {
+			// NDC9を取り出せた場合
+			App::uses('File', 'Utility');
+			// 分類表の読み込み
+			$File = new File(WWW_ROOT. 'files'. DS. 'NDC9.txt');
+			$content = $File->read();
+			// 検索開始
+			if ($key_start = strpos($content, $key)) {
+				// 分類表に存在した場合
+				$word_start = strpos($content, ":", $key_start);
+				$end = strpos($content, "\n", $word_start);
+				// 「:」の分移動
+				++$word_start;
+				$category = substr($content, $word_start, $end - $word_start);
+			}
+		}
+		return $category;
 	}
 
 	public function createYear($data) {
