@@ -51,6 +51,11 @@
 			<?php echo h($bookMaster['BookMaster']['publication_date']); ?>
 			&nbsp;
 		</dd>
+		<dt>分類</dt>
+		<dd>
+			<?php echo h($bookMaster['BookMaster']['category']); ?>
+			&nbsp;
+		</dd>
 		<dt>状態</dt>
 		<dd>
 			<?php echo h($bookMaster['BookMaster']['status']); ?>

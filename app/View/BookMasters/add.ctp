@@ -2,7 +2,7 @@
 <?php echo $this->Html->script('rendering-mode.js'); ?>
 <h2>蔵書登録</h2>
 <p>※図書番号と請求番号と蔵書名は必須項目です</p>
-<?php echo $this->Form->create(); ?>
+<?php echo $this->Form->create('BookMaster'); ?>
 	<?php
 		echo $this->Form->input('book_id', array('type' => 'text', 'label' => '[図書番号]'));
 		echo $this->Form->input('claim_id', array('type' => 'text', 'label' => '[請求番号]'));

@@ -139,6 +139,7 @@ class BookMaster extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
+/*
 		'status' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
@@ -157,6 +158,7 @@ class BookMaster extends AppModel {
 				'on' => 'update', // Limit validation to 'create' or 'update' operations
 			),
 		),
+*/
 		'page' => array(
 			'naturalnumber' => array(
 				'rule' => array('naturalnumber'),

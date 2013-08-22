@@ -8,7 +8,7 @@
 	</title>
 	<?php
 		echo $this->Html->meta('icon');
-
+		
 		echo $this->Html->css('cake.generic');
 
 		echo $this->fetch('meta');
@@ -21,7 +21,7 @@
 	<div id="container">
 		<div id="header">
 			<div id="title">
-				<img src="../img/title.png">
+				<?php echo $this->Html->image('title.png'); ?>
 			</div> <!-- #title -->
 			<div id="menu">
 							<!-- リンク表示 -->

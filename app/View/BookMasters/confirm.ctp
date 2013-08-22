@@ -1,11 +1,6 @@
-<div class="bookMasters view">
+<div class="bookMasters confirm">
 <h2>蔵書詳細</h2>
 	<dl>
-		<dt>蔵書ID</dt>
-		<dd>
-			<?php echo h($bookMaster['BookMaster']['id']); ?>
-			&nbsp;
-		</dd>
 		<dt>図書ID</dt>
 		<dd>
 			<?php echo h($bookMaster['BookMaster']['book_id']); ?>
@@ -48,17 +43,17 @@
 		</dd>
 		<dt>出版年</dt>
 		<dd>
-			<?php echo h($bookMaster['BookMaster']['publication_date']); ?>
-			&nbsp;
-		</dd>
-		<dt>状態</dt>
-		<dd>
-			<?php echo h($bookMaster['BookMaster']['status']); ?>
+			<?php echo $bookMaster['BookMaster']['publication_date']['year']; ?>-<?php echo $bookMaster['BookMaster']['publication_date']['month']; ?>-<?php echo $bookMaster['BookMaster']['publication_date']['day']; ?>
 			&nbsp;
 		</dd>
 		<dt>シールの色</dt>
 		<dd>
 			<?php echo $bookMaster['Color']['code']; ?>
+			&nbsp;
+		</dd>
+		<dt>分類</dt>
+		<dd>
+			<?php echo $bookMaster['BookMaster']['category']; ?>
 			&nbsp;
 		</dd>
 		<dt>ページ数</dt>
@@ -71,24 +66,9 @@
 			<?php echo h($bookMaster['BookMaster']['annotation']); ?>
 			&nbsp;
 		</dd>
-		<dt>作成日時</dt>
-		<dd>
-			<?php echo h($bookMaster['BookMaster']['created']); ?>
-			&nbsp;
-		</dd>
-		<dt>更新日時</dt>
-		<dd>
-			<?php echo h($bookMaster['BookMaster']['modified']); ?>
-			&nbsp;
-		</dd>
 	</dl>
+
+	<?php echo $this->Html->link('戻る', array('action' => $back)); ?>
+	<?php echo $this->Html->link('登録', array('action' => 'book_save')); ?>
 </div>
-<div class="actions">
-	<h3>操作</h3>
-	<ul>
-		<li><?php echo $this->Html->link('蔵書編集', array('action' => 'edit', $bookMaster['BookMaster']['id'])); ?> </li>
-		<li><?php echo $this->Form->postLink('蔵書破棄', array('action' => 'delete', $bookMaster['BookMaster']['id']), null, '本当に蔵書を消してもいいですか？'); ?> </li>
-		<li><?php echo $this->Html->link('蔵書一覧', array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link('蔵書追加', array('action' => 'add')); ?> </li>
-	</ul>
-</div>
+
