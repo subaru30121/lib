@@ -92,7 +92,7 @@ class BookMastersController extends AppController {
 		$this->set('title_for_layout', "蔵書編集");
 		$this->BookMaster->id = $id;
 		if (!$this->BookMaster->exists()) {
-			$this->log('蔵書が見つからない：蔵書編集', LOG_DEBUG);
+			$this->log('蔵書が見つからない:蔵書編集', LOG_DEBUG);
 			$this->redirect(array('action' => 'index', 'controller' => 'management'));
 		}
 		$this->request->data['BookMaster']['id'] = $id;
@@ -133,7 +133,7 @@ class BookMastersController extends AppController {
 	public function confirm() {
 		if (!$this->Session->check('book_data')) {
 			// データがない場合はトップページへ
-			$this->log('不正侵入：確認画面', LOG_DEBUG);
+			$this->log('不正侵入：確認画面(book)', LOG_DEBUG);
 			$this->redirect(array('action' => 'index', 'controller' => 'management'));
 		}
 		$this->set('title_for_layout', "蔵書確認");
@@ -145,7 +145,7 @@ class BookMastersController extends AppController {
 	public function book_save() {
 		if (!$this->Session->check('book_data')) {
                         // データがない場合はトップページへ
-                        $this->log('不正侵入：登録処理', LOG_DEBUG);
+                        $this->log('不正侵入：登録処理(book)', LOG_DEBUG);
                         $this->redirect(array('action' => 'index', 'controller' => 'management'));
                 }
 		// Viewは使わない
@@ -170,11 +170,13 @@ class BookMastersController extends AppController {
 	public function delete($id = null) {
 		$this->set('title_for_layout', "蔵書破棄");
 		if (!$this->request->is('post')) {
-			throw new MethodNotAllowedException();
+			$this->log('不正侵入:削除処理(book)', LOG_DEBUG);
+			$this->redirect(array('action' => 'index', 'controller' => 'management'));
 		}
 		$this->BookMaster->id = $id;
 		if (!$this->BookMaster->exists()) {
-			throw new NotFoundException('蔵書は見つかりませんでした');
+			$this->log('蔵書が見つからない:削除処理(book)', LOG_DEBUG);
+			$this->redirect(array('action' => 'index', 'controller' => 'management'));
 		}
 		if ($this->BookMaster->delete($id)) {
 			$message = $id. "番の蔵書を削除状態にしました";

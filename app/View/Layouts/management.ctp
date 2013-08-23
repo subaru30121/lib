@@ -40,6 +40,10 @@
 			<?php echo $this->HTML->link('蔵書登録', array('controller' => 'bookMasters', 'action' => 'add')); ?><br />
 			<?php echo $this->HTML->link('蔵書一覧', array('controller' => 'bookMasters', 'action' => 'index')); ?> <br />
 			</div>
+			<div id="menuVideo">
+			<?php echo $this->HTML->link('映像登録', array('controller' => 'videoMasters', 'action' => 'add')); ?><br />
+			<?php echo $this->HTML->link('映像一覧', array('controller' => 'videoMasters', 'action' => 'index')); ?><br />
+			</div>
 			</div> <!-- #menu -->
 		</div> <!-- #header -->
 		<div id="content">

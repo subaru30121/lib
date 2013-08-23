@@ -42,8 +42,12 @@ class ManagementController extends AppController {
 		$this->set("title_for_layout","ログイン");
 		if (!empty($this->request->data)) {
 			if($this->Auth->login()){
+				$message = "「". AuthComponent::user('username'). "」がログインしました";
+				$this->log("$message", LOG_DEBUG);
 				return	$this->redirect($this->Auth->redirect());
 			}else{
+				$message = "「". $this->request->data['User']['username']. "」がログインしようとしています...";
+				$this->log("$message", LOG_DEBUG);
 				$this->Session->setFlash(__("ユーザ名かパスワードが違います"),"default",array(),"auth");
 			}
 		}
@@ -69,10 +73,16 @@ class ManagementController extends AppController {
 			// DBへ登録
 			if ($this->User->save($this->request->data['User'], false)) {
 				// 成功した場合
+				$message = "「". AuthComponent::user('username') . "」が以下の内容でユーザ登録しました\n";
+				$message .= print_r($this->request->data, true);
+				$this->log("$message", LOG_DEBUG);
 				$this->Session->setFlash(__('登録を完了しました'));
 				$this->redirect('./index');
 			} else {
 				// 失敗した場合
+				$message = "「". AuthComponent::user('username') . "」が以下の内容でユーザ登録に失敗しました\n";
+				$message .= print_r($this->request->data, true);
+				$this->log("$message", LOG_DEBUG);
 				$this->Session->setFlash(__('登録に失敗しました'));
 			}
 		}
@@ -129,10 +139,16 @@ class ManagementController extends AppController {
 			// DBへ登録
 			if ($this->User->save($this->request->data['User'], false, $fields)) {
 				// 成功した場合
+				$message = "「". AuthComponent::user('username') . "」が以下の内容でユーザ編集しました\n";
+                                $message .= print_r($this->request->data, true);
+                                $this->log("$message", LOG_DEBUG); 
 				$this->Session->setFlash(__('登録を完了しました'));
 				$this->redirect('./select_user');
 			} else {
 				// 失敗した場合
+				$message = "「". AuthComponent::user('username') . "」が以下の内容でユーザ編集に失敗\n";
+                                $message .= print_r($this->request->data, true);
+                                $this->log("$message", LOG_DEBUG);
 				$this->Session->setFlash(__('登録に失敗しました'));
 			}
 		} else {
@@ -145,16 +161,20 @@ class ManagementController extends AppController {
 	public function delete_user($id) {
 		$this->set('title_for_layout', "ユーザ削除");
 		if ($this->request->is('get')) {
-			throw new MethoudNotAllowedException();
+			$this->log('不正侵入:削除処理(user)', LOG_DEBUG);
+			$this->redirect(array('action' => 'index', 'controller' => 'management'));
 		}
 		$fields = array('group_id');
 		$data = array('id' => $id, 'group_id' => 3);
 		if ($this->User->save($data, false, $fields)) {
+			$message = "「". AuthComponent::user('username'). "」が". $id. "番のユーザを削除状態にしました";
 			$this->Session->setFlash(__('削除されました'));
 			$this->redirect('./select_user');
 		}
 	}
 	
+// グループは開発者が設定
+
 	// グループ登録
 	public function add_group() {
 		$this->set('title_for_layout', "グループ登録");

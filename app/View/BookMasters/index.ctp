@@ -45,6 +45,6 @@ foreach ($bookMasters as $bookMaster): ?>
 <?php endforeach; ?>
 </table>
 
-<?php echo $this->Paginator->prev('<< 戻る'); ?>
-<?php echo $this->Paginator->numbers(); ?>
+<?php echo $this->Paginator->prev('<< 戻る'); ?> 
+<?php echo $this->Paginator->numbers(); ?> 
 <?php echo $this->Paginator->next('次へ >>'); ?>
