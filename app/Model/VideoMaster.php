@@ -54,7 +54,17 @@ class VideoMaster extends AppModel {
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
-		),	
+		),
+		'time' => array(
+			'naturalnumber' => array(
+                                'rule' => array('naturalnumber'),
+                                'message' => '数字を入力してください',
+                                'allowEmpty' => true,
+                                //'required' => false,
+                                //'last' => false, // Stop validation after this rule
+                                //'on' => 'create', // Limit validation to 'create' or 'update' operations
+                        ),
+		),
 		'location' => array(
 			'maxlength' => array(
 				'rule' => array('maxlength', 100),
@@ -68,6 +78,10 @@ class VideoMaster extends AppModel {
 	);
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
+
+	public function beforeFind($queryData) {
+		return $this->cutData($queryData);
+	}
 
 	//　タイトル設定
 	public function cutData($queryData) {

@@ -11,6 +11,11 @@
 			<?php echo h($videoMaster['VideoMaster']['title_kana']); ?>
 			&nbsp;
 		</dd>
+		<dt>録画時間(分)</dt>
+		<dd>
+			<?php echo h($videoMaster['VideoMaster']['time']); ?>
+			&nbsp;
+		</dd>
 		<dt>格納場所</dt>
 		<dd>
 			<?php echo h($videoMaster['VideoMaster']['location']); ?>
