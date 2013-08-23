@@ -50,6 +50,7 @@
 			<?php echo $this->session->flash('auth'); ?>
 		</div> <!-- #content -->
 		<?php echo $this->element('sql_dump'); ?>
+		<div id="footer"></div>
 	</div> <!-- #container -->
 </body>
 </html>

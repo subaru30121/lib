@@ -3,7 +3,7 @@
 <h1>ユーザ一覧</h1>
 
 <dl class="filters">
-	<dt>グループ：</dt>
+	グループ：
 	<dd class="filter">
 		<input id="class-filter-0" name="class-filter" type="radio" value="" checked/><label for="class-filter-0">all</label>
 		<input id="class-filter-1" name="class-filter" type="radio" value="admin"/><label for="class-filter-1">admin</label>

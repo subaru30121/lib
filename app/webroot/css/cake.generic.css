@@ -29,6 +29,7 @@ body {
 /*	color: #fff;
 	font-size:90%; */
 	margin: 0;
+	color: #333;
 }
 a {
 	color: #442620;
@@ -145,7 +146,6 @@ ul, li {
 	background-position: bottom;
 	background-repeat: repeat-x;
 	clear: both;
-	color: #333;
 	padding: 10px 20px 40px 20px;
 	overflow: auto;
 }
@@ -185,15 +185,16 @@ div.actions h3 {
 table {
 	border-right:0;
 	clear: both;
-	color: #333;
 	margin-bottom: 10px;
 	width: 100%;
 }
 th {
 	border:0;
 	border-bottom:2px solid #555;
-	text-align: left;
-	padding:4px;
+	background-color: #FC4040;
+	color: #fff;
+/*	text-align: left;
+	padding:4px; */
 }
 th a {
 	display: block;
@@ -207,13 +208,16 @@ th a.desc:after {
 	content: ' ⇡';
 }
 table tr td {
-	padding: 6px;
+/*	padding: 6px; */
 	text-align: left;
 	vertical-align: top;
-	border-bottom:1px solid #ddd;
+/*	border-bottom:1px solid #ddd; */
+}
+table tr {
+	background-color: #fff;
 }
 table tr:nth-child(even) {
-	background: #F58C77;
+	background-color: #F58C77;
 }
 td.actions {
 	text-align: center;
@@ -287,10 +291,10 @@ dl {
 	margin: 0em 0em;
 	width: 60%;
 }
-dl dd:nth-child(4n+2),
+/*dl dd:nth-child(4n+2),
 dl dt:nth-child(4n+1) {
 	background: #F58C77;
-}
+}*/
 
 dt {
 	font-weight: bold;
@@ -305,7 +309,7 @@ dd {
 }
 
 /** Forms **/
-/*form {
+form {
 	clear: both;
 	margin-right: 20px;
 	padding: 0;
@@ -333,7 +337,7 @@ fieldset fieldset div {
 	clear: left;
 	margin: 0 20px;
 }
-form div {
+/*form div {
 	clear: both;
 	margin-bottom: 1em;
 	padding: .5em;
@@ -349,17 +353,19 @@ form .required label:after {
 	color: #e32;
 	content: '*';
 	display:inline;
-}
+}*/
 form div.submit {
 	border: 0;
 	clear: both;
 	margin-top: 10px;
 }
 label {
-	display: block;
+/*	display: block;*/
 	font-size: 110%;
 	margin-bottom:3px;
-}*/
+	margin-right: 5px;
+	color: #FC4040;
+}
 input, textarea {
 	clear: both;
 	font-family: "メイリオ", "frutiger linotype", "lucida grande", "verdana", sans-serif;
