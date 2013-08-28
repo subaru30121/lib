@@ -206,7 +206,7 @@ class BookMaster extends AppModel {
 
 	// 分類の検索
 	public function categorySearch($number = null) {
-		$category = false;
+		$category = $number;
 		// 請求番号からNDC9を取り出す
 		if ($key = substr($number, 0, strpos($number, '-'))) {
 			// NDC9を取り出せた場合
@@ -222,8 +222,13 @@ class BookMaster extends AppModel {
 				// 「:」の分移動
 				++$word_start;
 				$category = substr($content, $word_start, $end - $word_start);
+			} else {
+				$message = "見つからない分類コード:". $number;
+				$this->log("$message", LOG_DEBUG);
 			}
 		}
+
+		// 分類名か分類コード
 		return $category;
 	}
 

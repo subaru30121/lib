@@ -31,7 +31,12 @@ class Search extends AppModel{
 				"rule" => "rangeCheck",
 				"message" => "発行年の範囲が正しくありません",
 			)
-		)
+		),
+		"title"=>array(
+                        "rule" => array("maxLength", 100),
+                        "message" => "一つの言葉は100文字までです",
+                        "allowEmpty" => true
+                ),
 	);
 		
 	function changeYear() {
@@ -98,6 +103,31 @@ class Search extends AppModel{
 		if (!$this->validates(array('fieldList' => array('publication_date_start', 'publication_date_end')))) {
 			$_flg = false;
 		}
+		
+		return $_flg;
+	}
+	
+	function titleValidate() {
+		$_flg = true;
+		// 分解後のデータ用
+		$_titles = array();
+		// 元々のデータの避難用
+                $_escape = array();
+
+		// 蔵書名のバリデート
+                $_escape['title'] = $this->data['Search']['title'];
+                $this->data['Search']['title'] = str_replace("　", " ", $this->data['Search']['title']);
+                $_titles = explode(" ", $this->data['Search']['title']);
+                foreach($_titles as $_title) {
+                        $this->data['Search']['title'] = $_title;
+                        if (!$this->validates(array('fieldList' => array('title')))) {
+                                $this->data['Search']['title'] = $_escape['title'];
+                                LogError("タイトル検索ワードエラー:". $_title);
+                                $_flg = false;
+                                break;
+                        }
+                }
+                $this->data['Search']['title'] = $_escape['title'];
 		
 		return $_flg;
 	}
