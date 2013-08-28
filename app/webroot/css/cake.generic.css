@@ -23,13 +23,12 @@
 
 /** General Style Info **/
 body {
-	background-color: #CF2225;
+	background-color: #FFD7AA;
 	background-image: url('../img/back.png');
 	font-family:'メイリオ', 'lucida grande',verdana,helvetica,arial,sans-serif;
 /*	color: #fff;
 	font-size:90%; */
 	margin: 0;
-	color: #333;
 }
 a {
 	color: #442620;
@@ -37,7 +36,7 @@ a {
 	font-weight: bold;
 }
 a:hover {
-	color: #367889;
+	color: #A70000;
 	text-decoration:none;
 }
 a img {
@@ -191,8 +190,7 @@ table {
 th {
 	border:0;
 	border-bottom:2px solid #555;
-	background-color: #FC4040;
-	color: #fff;
+	background-color: #F58C77;
 /*	text-align: left;
 	padding:4px; */
 }
@@ -202,10 +200,10 @@ th a {
 	text-decoration: none;
 }
 th a.asc:after {
-	content: ' ⇣';
+	content: ' ?';
 }
 th a.desc:after {
-	content: ' ⇡';
+	content: ' ?';
 }
 table tr td {
 /*	padding: 6px; */
@@ -217,7 +215,7 @@ table tr {
 	background-color: #fff;
 }
 table tr:nth-child(even) {
-	background-color: #F58C77;
+	background-color: #FFD3CC;
 }
 td.actions {
 	text-align: center;
@@ -360,12 +358,24 @@ form div.submit {
 	margin-top: 10px;
 }
 label {
-/*	display: block;*/
+	display: block;
+	width: 25em;
+	font-size: 110%;
+	margin-bottom:3px;
+	margin-right: 5px;
+	color: #fff;
+	background: #EF8D69;
+}
+
+#default label, .filter label{
+	display: inline;
 	font-size: 110%;
 	margin-bottom:3px;
 	margin-right: 5px;
 	color: #FC4040;
+	background: none;
 }
+
 input, textarea {
 	clear: both;
 	font-family: "メイリオ", "frutiger linotype", "lucida grande", "verdana", sans-serif;

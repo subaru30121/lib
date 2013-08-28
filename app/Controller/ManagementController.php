@@ -10,7 +10,7 @@ class ManagementController extends AppController {
 	public $name = "Management";
 	
 	// モデル指定
-	public $uses = array('User', 'Group');
+	public $uses = array('User', 'Group', 'Login');
 	
 	// 認証処理が行われる前の処理
 	public function beforeFilter() {
@@ -35,6 +35,8 @@ class ManagementController extends AppController {
 	// 初期画面
 	function index() {
 		$this->set('title_for_layout', "管理ページ");
+		$history = $this->Login->find('all');
+//die;
 	}
 
 	// ログイン処理
@@ -42,8 +44,7 @@ class ManagementController extends AppController {
 		$this->set("title_for_layout","ログイン");
 		if (!empty($this->request->data)) {
 			if($this->Auth->login()){
-				$message = "「". AuthComponent::user('username'). "」がログインしました";
-				$this->log("$message", LOG_DEBUG);
+				$this->Login->login_log();
 				return	$this->redirect($this->Auth->redirect());
 			}else{
 				$message = "「". $this->request->data['User']['username']. "」がログインに失敗しました";
