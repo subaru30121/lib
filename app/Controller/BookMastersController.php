@@ -42,8 +42,9 @@ class BookMastersController extends AppController {
 		$this->set('title_for_layout', "蔵書詳細");
 		$this->BookMaster->id = $id;
 		if (!$this->BookMaster->exists()) {
-			throw new NotFoundException('蔵書は見つかりませんでした。');
-		}
+                        $this->log('蔵書が見つからない:蔵書詳細', LOG_DEBUG);
+                        $this->redirect(array('action' => 'index', 'controller' => 'management'));
+                }
 		$this->set('bookMaster', $this->BookMaster->read(null, $id));
 	}
 
@@ -59,8 +60,14 @@ class BookMastersController extends AppController {
 				$this->Color->create();
 				$this->Color->set($this->request->data['Color']);
 				if ($this->Color->isUnique(array('code'))) {
-					$this->Color->saveAll($this->request->data['Color']);
-					$this->request->data['BookMaster']['color_id'] = $this->Color->getLastInsertID();
+					if ($this->Color->saveAll($this->request->data['Color'])) {
+						$this->log('色の登録に成功', LOG_DEBUG);
+						$this->request->data['BookMaster']['color_id'] = $this->Color->getLastInsertID();
+					} else {
+						$this->log('色の登録に失敗', LOG_DEBUG);
+						$this->Session->setFlash('シールの色の登録に失敗しました。ご確認ください');
+						return;
+					}
 				} else {
 					$_color_data = $this->Color->find('first', array('conditions' => array('code' => $this->request->data['Color']['code'])));
 					$this->request->data['BookMaster']['color_id'] = $_color_data['Color']['id'];
@@ -101,8 +108,14 @@ class BookMastersController extends AppController {
                                 $this->Color->create();
                                 $this->Color->set($this->request->data['Color']);
                                 if ($this->Color->isUnique(array('code'))) {
-                                        $this->Color->saveAll($this->request->data['Color']);
-                                        $this->request->data['BookMaster']['color_id'] = $this->Color->getLastInsertID();
+                                        if ($this->Color->saveAll($this->request->data['Color'])) {
+						$this->log('色の登録に成功しました', LOG_DEBUG);
+                                        	$this->request->data['BookMaster']['color_id'] = $this->Color->getLastInsertID();
+					} else {
+						$this->log('色の登録に失敗しました', LOG_DEBUG);
+						$this->Session->setFlash('シールの色の登録に失敗しました。ご確認ください');
+						return;
+					}
                                 } else {
                                         $_color_data = $this->Color->find('first', array('conditions' => array('code' => $this->request->data['Color']['code'])));
                                         $this->request->data['BookMaster']['color_id'] = $_color_data['Color']['id'];

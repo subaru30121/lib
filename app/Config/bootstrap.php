@@ -168,16 +168,21 @@ Configure::write('Dispatcher.filters', array(
 /**
  * Configures default file logging options
  */
+// ログ出力先ファイル変更
+// 参考URL:http://kwski.net/cakephp-2-x/1048/
 App::uses('CakeLog', 'Log');
+$log_path = LOGS. DS. date('Ym'). '_';
 CakeLog::config('debug', array(
 	'engine' => 'FileLog',
 	'types' => array('notice', 'info', 'debug'),
 	'file' => 'debug',
+	'path' => $log_path
 ));
 CakeLog::config('error', array(
 	'engine' => 'FileLog',
 	'types' => array('warning', 'error', 'critical', 'alert', 'emergency'),
 	'file' => 'error',
+	'path' => $log_path
 ));
 
 // 最低年

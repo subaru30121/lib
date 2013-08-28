@@ -46,7 +46,7 @@ class ManagementController extends AppController {
 				$this->log("$message", LOG_DEBUG);
 				return	$this->redirect($this->Auth->redirect());
 			}else{
-				$message = "「". $this->request->data['User']['username']. "」がログインしようとしています...";
+				$message = "「". $this->request->data['User']['username']. "」がログインに失敗しました";
 				$this->log("$message", LOG_DEBUG);
 				$this->Session->setFlash(__("ユーザ名かパスワードが違います"),"default",array(),"auth");
 			}
@@ -74,14 +74,14 @@ class ManagementController extends AppController {
 			if ($this->User->save($this->request->data['User'], false)) {
 				// 成功した場合
 				$message = "「". AuthComponent::user('username') . "」が以下の内容でユーザ登録しました\n";
-				$message .= print_r($this->request->data, true);
+				$message .= $this->request->data['User']['username'];
 				$this->log("$message", LOG_DEBUG);
 				$this->Session->setFlash(__('登録を完了しました'));
 				$this->redirect('./index');
 			} else {
 				// 失敗した場合
 				$message = "「". AuthComponent::user('username') . "」が以下の内容でユーザ登録に失敗しました\n";
-				$message .= print_r($this->request->data, true);
+				$message .= $this->request->data['User']['username'];
 				$this->log("$message", LOG_DEBUG);
 				$this->Session->setFlash(__('登録に失敗しました'));
 			}
@@ -100,6 +100,8 @@ class ManagementController extends AppController {
 		$this->set('title_for_layout', "ユーザ編集");
 		if (!preg_match('/^[1-9][0-9]*$/', $this->params['url']['user_id'])) {
 			// 変なもんだったら一覧に戻す
+			$message = "不正なユーザIDを検出(ユーザ編集):". $this->params['url']['user_id'];
+			$this->log("$message", LOG_DEBUG);
 			$this->redirect('./select_user');
 		}
 		// セレクトボックス生成
@@ -140,14 +142,14 @@ class ManagementController extends AppController {
 			if ($this->User->save($this->request->data['User'], false, $fields)) {
 				// 成功した場合
 				$message = "「". AuthComponent::user('username') . "」が以下の内容でユーザ編集しました\n";
-                                $message .= print_r($this->request->data, true);
+                                $message .= $this->request->data['User']['username'];
                                 $this->log("$message", LOG_DEBUG); 
 				$this->Session->setFlash(__('登録を完了しました'));
 				$this->redirect('./select_user');
 			} else {
 				// 失敗した場合
 				$message = "「". AuthComponent::user('username') . "」が以下の内容でユーザ編集に失敗\n";
-                                $message .= print_r($this->request->data, true);
+                                $message .= $this->request->data['User']['username'];
                                 $this->log("$message", LOG_DEBUG);
 				$this->Session->setFlash(__('登録に失敗しました'));
 			}
