@@ -23,8 +23,8 @@
 
 /** General Style Info **/
 body {
-	background-color: #FFD7AA;
-	background-image: url('../img/back.png');
+	background-color: #FFCC75;
+/*	background-image: url('../img/cloth01_bg08.gif');*/
 	font-family:'メイリオ', 'lucida grande',verdana,helvetica,arial,sans-serif;
 /*	color: #fff;
 	font-size:90%; */
@@ -73,7 +73,7 @@ ul, li {
 
 /** Layout **/
 #container {
-	width: 950px;
+	width: 1000px;
 	margin: 0 auto;
 	text-align: left;
 }
@@ -215,7 +215,7 @@ table tr {
 	background-color: #fff;
 }
 table tr:nth-child(even) {
-	background-color: #FFD3CC;
+	background-color: #D7E0DC;
 }
 td.actions {
 	text-align: center;
@@ -804,3 +804,4 @@ pre {
 #url-rewriting-warning {
 	display:none;
 }
+

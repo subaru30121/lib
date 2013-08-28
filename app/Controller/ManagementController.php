@@ -36,7 +36,7 @@ class ManagementController extends AppController {
 	function index() {
 		$this->set('title_for_layout', "管理ページ");
 		$history = $this->Login->find('all');
-//die;
+		$this->set('history', $history);
 	}
 
 	// ログイン処理

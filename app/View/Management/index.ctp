@@ -1,5 +1,3 @@
-<h1>トップペ～ジだよ～ん</h1>
+<h2>ログイン履歴</h2>
 
-<pre>
-<?php var_dump(AuthComponent::user()); ?>
-</pre>
+
