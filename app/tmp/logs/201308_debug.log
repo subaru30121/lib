@@ -107,3 +107,99 @@ Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 161
 2013-08-28 16:13:11 Debug: ログイン履歴を更新しました
 2013-08-29 13:44:07 Debug: 「iwasaki_admin」がログインしました
 2013-08-29 13:44:07 Debug: ログイン履歴を更新しました
+2013-08-29 14:21:12 Debug: 「iwasaki_admin」がログインしました
+2013-08-29 14:21:12 Debug: ログイン履歴を更新しました
+2013-08-29 14:21:31 Debug: 「iwasaki_admin」がログインしました
+2013-08-29 14:21:31 Debug: ログイン履歴を更新しました
+2013-08-29 14:21:35 Debug: 「iwasaki_admin」がログインしました
+2013-08-29 14:21:35 Debug: ログイン履歴を更新しました
+2013-08-29 14:51:59 Notice: Notice (8): Undefined index: BookMaster in [/var/www/html/lib/app/Model/BookMaster.php, line 327]
+Trace:
+BookMaster::afterFind() - APP/Model/BookMaster.php, line 327
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 244
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 2924
+Model::find() - CORE/Cake/Model/Model.php, line 2646
+PaginatorComponent::paginate() - CORE/Cake/Controller/Component/PaginatorComponent.php, line 185
+Controller::paginate() - CORE/Cake/Controller/Controller.php, line 1081
+BookMastersController::index() - APP/Controller/BookMastersController.php, line 37
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 485
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 186
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 161
+[main] - APP/webroot/index.php, line 92
+
+2013-08-29 14:52:52 Notice: Notice (8): Undefined index: BookMaster in [/var/www/html/lib/app/Model/BookMaster.php, line 327]
+Trace:
+BookMaster::afterFind() - APP/Model/BookMaster.php, line 327
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 244
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 2924
+Model::find() - CORE/Cake/Model/Model.php, line 2646
+PaginatorComponent::paginate() - CORE/Cake/Controller/Component/PaginatorComponent.php, line 185
+Controller::paginate() - CORE/Cake/Controller/Controller.php, line 1081
+LibraryController::summary() - APP/Controller/LibraryController.php, line 55
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 485
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 186
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 161
+[main] - APP/webroot/index.php, line 92
+
+2013-08-29 14:52:56 Notice: Notice (8): Undefined index: BookMaster in [/var/www/html/lib/app/Model/BookMaster.php, line 327]
+Trace:
+BookMaster::afterFind() - APP/Model/BookMaster.php, line 327
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 244
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 2924
+Model::find() - CORE/Cake/Model/Model.php, line 2646
+PaginatorComponent::paginate() - CORE/Cake/Controller/Component/PaginatorComponent.php, line 185
+Controller::paginate() - CORE/Cake/Controller/Controller.php, line 1081
+LibraryController::summary() - APP/Controller/LibraryController.php, line 55
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 485
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 186
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 161
+[main] - APP/webroot/index.php, line 92
+
+2013-08-29 14:53:08 Notice: Notice (8): Undefined index: BookMaster in [/var/www/html/lib/app/Model/BookMaster.php, line 327]
+Trace:
+BookMaster::afterFind() - APP/Model/BookMaster.php, line 327
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 244
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 2924
+Model::find() - CORE/Cake/Model/Model.php, line 2646
+PaginatorComponent::paginate() - CORE/Cake/Controller/Component/PaginatorComponent.php, line 185
+Controller::paginate() - CORE/Cake/Controller/Controller.php, line 1081
+LibraryController::summary() - APP/Controller/LibraryController.php, line 55
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 485
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 186
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 161
+[main] - APP/webroot/index.php, line 92
+
+2013-08-29 14:53:15 Notice: Notice (8): Undefined index: BookMaster in [/var/www/html/lib/app/Model/BookMaster.php, line 327]
+Trace:
+BookMaster::afterFind() - APP/Model/BookMaster.php, line 327
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 244
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 2924
+Model::find() - CORE/Cake/Model/Model.php, line 2646
+PaginatorComponent::paginate() - CORE/Cake/Controller/Component/PaginatorComponent.php, line 185
+Controller::paginate() - CORE/Cake/Controller/Controller.php, line 1081
+LibraryController::summary() - APP/Controller/LibraryController.php, line 55
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 485
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 186
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 161
+[main] - APP/webroot/index.php, line 92
+
+2013-08-29 14:53:27 Notice: Notice (8): Undefined index: VideoMaster in [/var/www/html/lib/app/Model/VideoMaster.php, line 118]
+Trace:
+VideoMaster::afterFind() - APP/Model/VideoMaster.php, line 118
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 244
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 2924
+Model::find() - CORE/Cake/Model/Model.php, line 2646
+PaginatorComponent::paginate() - CORE/Cake/Controller/Component/PaginatorComponent.php, line 185
+Controller::paginate() - CORE/Cake/Controller/Controller.php, line 1081
+LibraryController::summary_video() - APP/Controller/LibraryController.php, line 109
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 485
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 186
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 161
+[main] - APP/webroot/index.php, line 92
+

@@ -33,8 +33,11 @@
 			<div id="menuUserGroup">
 			<?php echo $this->HTML->link('ユーザ登録', array('controller' => 'management', 'action' => 'add_user')); ?><br />
 			<?php echo $this->HTML->link('ユーザ一覧', array('controller' => 'management', 'action' => 'select_user')); ?><br />
+			<?php // グループはデバック時のみ ?>
+			<?php if (Configure::read('debug') > 0) : ?>
 			<?php echo $this->HTML->link('グループ登録', array('controller' => 'management', 'action' => 'add_group')); ?><br />
 			<?php echo $this->HTML->link('グループ一覧', array('controller' => 'management', 'action' => 'select_group')); ?><br />
+			<?php endif; ?>
 			</div>
 			<div id="menuBock">
 			<?php echo $this->HTML->link('蔵書登録', array('controller' => 'bookMasters', 'action' => 'add')); ?><br />
