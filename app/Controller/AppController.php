@@ -48,5 +48,6 @@ class AppController extends Controller {
 	// 認証処理が行われる前の処理
 	public function beforeFilter() {
 		$this->Auth->loginAction = array('controller' => 'library', 'action' => 'index');
+		header('Cache-Control: no-store');
 	}
 }

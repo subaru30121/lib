@@ -92,7 +92,8 @@ class ManagementController extends AppController {
 	// ユーザ一覧
 	public function select_user() {
 		$this->set('title_for_layout', "ユーザ一覧");
-		$data = $this->User->find('all');
+		// adminが表示されないように変更
+		$data = $this->User->find('all', array('conditions' => array('group_id <>' => 1)));
 		$this->set('data',$data);
 	}
 	

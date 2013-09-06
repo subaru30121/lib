@@ -5,10 +5,10 @@
 <dl class="filters">
 	グループ：
 	<dd class="filter">
-		<input id="class-filter-0" name="class-filter" type="radio" value="" checked/><label for="class-filter-0">all</label>
-		<input id="class-filter-1" name="class-filter" type="radio" value="admin"/><label for="class-filter-1">admin</label>
-		<input id="class-filter-2" name="class-filter" type="radio" value="menber"/><label for="class-filter-2">menber</label>
-		<input id="class-filter-3" name="class-filter" type="radio" value="delete"/><label for="class-filter-3">delete</label>
+		<input id="class-filter-0" name="class-filter" type="radio" value="" checked/><label for="class-filter-0">全て</label>
+		<!-- <input id="class-filter-1" name="class-filter" type="radio" value="admin"/><label for="class-filter-1">admin</label> -->
+		<input id="class-filter-2" name="class-filter" type="radio" value="管理者"/><label for="class-filter-2">管理者</label>
+		<input id="class-filter-3" name="class-filter" type="radio" value="運営"/><label for="class-filter-3">運営</label>
 	</dd>
 	<div class="none">
 		<dt>Category：</dt>

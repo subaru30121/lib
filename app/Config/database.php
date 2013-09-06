@@ -64,7 +64,7 @@ class DATABASE_CONFIG {
 		'persistent' => false,
 		'host' => 'localhost',
 		'login' => 'library2013',
-		'password' => 'wfjoiefcnidSd2013',
+		'password' => 'vnowrghSFE13rSDA1',
 		'database' => 'library',
 		'prefix' => '',
 		'encoding' => 'utf8',

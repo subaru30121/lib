@@ -1,0 +1,126 @@
+2013-09-04 14:29:20 Warning: Warning (4096): Object of class CakeRequest could not be converted to string in [/var/www/html/lib/app/Controller/LibraryController.php, line 51]
+Trace:
+LibraryController::summary() - APP/Controller/LibraryController.php, line 51
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 485
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 186
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 161
+[main] - APP/webroot/index.php, line 92
+
+2013-09-04 15:43:35 Warning: Warning (4096): Object of class CakeRequest could not be converted to string in [/var/www/html/lib/app/Controller/LibraryController.php, line 51]
+Trace:
+LibraryController::summary() - APP/Controller/LibraryController.php, line 51
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 485
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 186
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 161
+[main] - APP/webroot/index.php, line 92
+
+2013-09-04 15:43:43 Warning: Warning (4096): Object of class CakeRequest could not be converted to string in [/var/www/html/lib/app/Controller/LibraryController.php, line 51]
+Trace:
+LibraryController::summary() - APP/Controller/LibraryController.php, line 51
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 485
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 186
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 161
+[main] - APP/webroot/index.php, line 92
+
+2013-09-04 15:44:28 Warning: Warning (4096): Object of class CakeRequest could not be converted to string in [/var/www/html/lib/app/Controller/LibraryController.php, line 51]
+Trace:
+LibraryController::summary() - APP/Controller/LibraryController.php, line 51
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 485
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 186
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 161
+[main] - APP/webroot/index.php, line 92
+
+2013-09-04 15:44:43 Warning: Warning (4096): Object of class CakeRequest could not be converted to string in [/var/www/html/lib/app/Controller/LibraryController.php, line 51]
+Trace:
+LibraryController::summary() - APP/Controller/LibraryController.php, line 51
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 485
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 186
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 161
+[main] - APP/webroot/index.php, line 92
+
+2013-09-04 15:45:05 Warning: Warning (4096): Object of class CakeRequest could not be converted to string in [/var/www/html/lib/app/Controller/LibraryController.php, line 51]
+Trace:
+LibraryController::summary() - APP/Controller/LibraryController.php, line 51
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 485
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 186
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 161
+[main] - APP/webroot/index.php, line 92
+
+2013-09-04 15:45:10 Warning: Warning (4096): Object of class CakeRequest could not be converted to string in [/var/www/html/lib/app/Controller/LibraryController.php, line 51]
+Trace:
+LibraryController::summary() - APP/Controller/LibraryController.php, line 51
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 485
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 186
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 161
+[main] - APP/webroot/index.php, line 92
+
+2013-09-04 15:48:03 Warning: Warning (4096): Object of class CakeRequest could not be converted to string in [/var/www/html/lib/app/Controller/LibraryController.php, line 51]
+Trace:
+LibraryController::summary() - APP/Controller/LibraryController.php, line 51
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 485
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 186
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 161
+[main] - APP/webroot/index.php, line 92
+
+2013-09-04 15:48:20 Warning: Warning (4096): Object of class CakeRequest could not be converted to string in [/var/www/html/lib/app/Controller/LibraryController.php, line 51]
+Trace:
+LibraryController::summary() - APP/Controller/LibraryController.php, line 51
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 485
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 186
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 161
+[main] - APP/webroot/index.php, line 92
+
+2013-09-04 15:55:32 Warning: Warning (4096): Object of class CakeRequest could not be converted to string in [/var/www/html/lib/app/Controller/LibraryController.php, line 51]
+Trace:
+LibraryController::summary() - APP/Controller/LibraryController.php, line 51
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 485
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 186
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 161
+[main] - APP/webroot/index.php, line 92
+
+2013-09-04 15:57:58 Warning: Warning (4096): Object of class CakeRequest could not be converted to string in [/var/www/html/lib/app/Controller/LibraryController.php, line 52]
+Trace:
+LibraryController::summary() - APP/Controller/LibraryController.php, line 52
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 485
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 186
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 161
+[main] - APP/webroot/index.php, line 92
+
+2013-09-04 15:59:14 Warning: Warning (4096): Object of class CakeRequest could not be converted to string in [/var/www/html/lib/app/Controller/LibraryController.php, line 54]
+Trace:
+LibraryController::summary() - APP/Controller/LibraryController.php, line 54
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 485
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 186
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 161
+[main] - APP/webroot/index.php, line 92
+
+2013-09-04 16:00:47 Warning: Warning (4096): Object of class CakeRequest could not be converted to string in [/var/www/html/lib/app/Controller/LibraryController.php, line 54]
+Trace:
+LibraryController::summary() - APP/Controller/LibraryController.php, line 54
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 485
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 186
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 161
+[main] - APP/webroot/index.php, line 92
+
+2013-09-04 16:01:37 Warning: Warning (4096): Object of class CakeRequest could not be converted to string in [/var/www/html/lib/app/Controller/LibraryController.php, line 54]
+Trace:
+LibraryController::summary() - APP/Controller/LibraryController.php, line 54
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 485
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 186
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 161
+[main] - APP/webroot/index.php, line 92
+

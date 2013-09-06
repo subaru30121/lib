@@ -18,6 +18,7 @@ class LibraryController extends AppController {
 	public function index() {
 		$this->set('title_for_layout', "検索ページ");
 		if (!empty($this->request->data['BookMaster'])) {
+			//$this->log("test2", LOG_DEBUG);
 			// 蔵書条件が入力された時
 			$this->Search->create();
                         $this->Search->set($this->data['BookMaster']);
@@ -25,7 +26,7 @@ class LibraryController extends AppController {
                         $this->request->data['Search'] = $this->Search->changeYear();
 
                         if($this->Search->myValidates()) {
-                                // バリデートに引っかかった場合
+                                // 入力が正常な場合
 				$this->Session->write('search_condition', $this->request->data);
 				$this->Session->write('search_flg', true);
 				$this->redirect(array('action' => 'summary'));
@@ -48,9 +49,18 @@ class LibraryController extends AppController {
 
 		if (!empty($this->request->data['BookMaster']) && $this->Session->read('search_condition') != $this->request->data) {
 			// 条件が変わった場合
-			$this->setAction('index');
-		}
+                        // 蔵書条件が入力された時
+                        $this->Search->create();
+                        $this->Search->set($this->data['BookMaster']);
+                        // 年の配列解除
+                        $this->request->data['Search'] = $this->Search->changeYear();
 
+                        if(!$this->Search->myValidates()) {
+                                // 入力が正常な場合
+                                $this->Session->setFlash('異常な検索を検知しました。');
+				$this->redirect(array('action' => 'index'));
+                        }
+		}
 		$this->BookMaster->recursive = 0;
 		$this->set('bookMasters', $this->paginate('BookMaster', $this->request->data['BookMaster']));
 	}

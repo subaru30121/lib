@@ -16,6 +16,9 @@
 		echo $this->fetch('script');
 	?>
 	<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta http-equiv="Expires" content="Thu, 01 Dec 1994 16:00:00 GMT">
 </head>
 <body id="default">
 	<div id="container">
