@@ -207,3 +207,123 @@ Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 161
 2013-09-06 09:35:50 Debug: ログイン履歴を更新しました
 2013-09-06 10:07:54 Debug: 「iwasaki_admin」がログインしました
 2013-09-06 10:07:54 Debug: ログイン履歴を更新しました
+2013-09-06 04:08:51 Debug: 「admin_user1」がログインしました
+2013-09-06 04:08:51 Debug: ログイン履歴を更新しました
+2013-09-06 04:14:21 Debug: Notice (8): Undefined index: VideoMaster in [C:\xampp\htdocs\lib\app\Model\VideoMaster.php, line 118]
+Trace:
+VideoMaster::afterFind() - APP\Model\VideoMaster.php, line 118
+CakeEventManager::dispatch() - CORE\Cake\Event\CakeEventManager.php, line 244
+Model::_filterResults() - CORE\Cake\Model\Model.php, line 2924
+Model::find() - CORE\Cake\Model\Model.php, line 2646
+PaginatorComponent::paginate() - CORE\Cake\Controller\Component\PaginatorComponent.php, line 185
+Controller::paginate() - CORE\Cake\Controller\Controller.php, line 1081
+VideoMastersController::index() - APP\Controller\VideoMastersController.php, line 37
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 485
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 186
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 161
+[main] - APP\webroot\index.php, line 92
+
+2013-09-06 04:17:30 Debug: Notice (8): Undefined index: BookMaster in [C:\xampp\htdocs\lib\app\Model\BookMaster.php, line 327]
+Trace:
+BookMaster::afterFind() - APP\Model\BookMaster.php, line 327
+CakeEventManager::dispatch() - CORE\Cake\Event\CakeEventManager.php, line 244
+Model::_filterResults() - CORE\Cake\Model\Model.php, line 2924
+Model::find() - CORE\Cake\Model\Model.php, line 2646
+PaginatorComponent::paginate() - CORE\Cake\Controller\Component\PaginatorComponent.php, line 185
+Controller::paginate() - CORE\Cake\Controller\Controller.php, line 1081
+BookMastersController::index() - APP\Controller\BookMastersController.php, line 37
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 485
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 186
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 161
+[main] - APP\webroot\index.php, line 92
+
+2013-09-12 02:19:03 Debug: 「」がログインに失敗しました
+2013-09-12 02:19:42 Debug: 「」がログインに失敗しました
+2013-09-12 02:20:19 Debug: 「」がログインに失敗しました
+2013-09-12 02:22:07 Debug: 「」がログインに失敗しました
+2013-09-12 02:22:42 Debug: 「」がログインに失敗しました
+2013-09-12 02:24:06 Debug: 「」がログインに失敗しました
+2013-09-12 02:25:23 Debug: 「」がログインに失敗しました
+2013-09-12 02:25:53 Debug: 「」がログインに失敗しました
+2013-09-12 02:25:58 Debug: 「」がログインに失敗しました
+2013-09-12 02:27:18 Debug: 「」がログインに失敗しました
+2013-09-12 02:27:47 Debug: 「」がログインに失敗しました
+2013-09-12 02:28:13 Debug: 「」がログインに失敗しました
+2013-09-12 02:28:47 Debug: 「」がログインに失敗しました
+2013-09-12 02:29:03 Debug: 「」がログインに失敗しました
+2013-09-12 02:32:19 Debug: 「」がログインに失敗しました
+2013-09-12 02:32:47 Debug: 「user_admin1」がログインに失敗しました
+2013-09-12 02:32:55 Debug: 「user_admin1」がログインに失敗しました
+2013-09-12 02:33:09 Debug: 「admin_user1」がログインしました
+2013-09-12 02:33:09 Debug: ログイン履歴を更新しました
+2013-09-12 02:39:44 Debug: Notice (8): Undefined index: BookMaster in [C:\xampp\htdocs\lib\app\Model\BookMaster.php, line 327]
+Trace:
+BookMaster::afterFind() - APP\Model\BookMaster.php, line 327
+CakeEventManager::dispatch() - CORE\Cake\Event\CakeEventManager.php, line 244
+Model::_filterResults() - CORE\Cake\Model\Model.php, line 2924
+Model::find() - CORE\Cake\Model\Model.php, line 2646
+PaginatorComponent::paginate() - CORE\Cake\Controller\Component\PaginatorComponent.php, line 185
+Controller::paginate() - CORE\Cake\Controller\Controller.php, line 1081
+BookMastersController::index() - APP\Controller\BookMastersController.php, line 37
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 485
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 186
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 161
+[main] - APP\webroot\index.php, line 92
+
+2013-09-12 02:56:12 Debug: Notice (8): Undefined index: BookMaster in [C:\xampp\htdocs\lib\app\Model\BookMaster.php, line 327]
+Trace:
+BookMaster::afterFind() - APP\Model\BookMaster.php, line 327
+CakeEventManager::dispatch() - CORE\Cake\Event\CakeEventManager.php, line 244
+Model::_filterResults() - CORE\Cake\Model\Model.php, line 2924
+Model::find() - CORE\Cake\Model\Model.php, line 2646
+PaginatorComponent::paginate() - CORE\Cake\Controller\Component\PaginatorComponent.php, line 185
+Controller::paginate() - CORE\Cake\Controller\Controller.php, line 1081
+LibraryController::summary() - APP\Controller\LibraryController.php, line 65
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 485
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 186
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 161
+[main] - APP\webroot\index.php, line 92
+
+2013-09-12 07:57:44 Debug: 「」がログインに失敗しました
+2013-09-12 07:57:57 Debug: 「admin_user1」がログインしました
+2013-09-12 07:57:57 Debug: ログイン履歴を更新しました
+2013-09-12 07:59:49 Debug: 「admin_user1」がログインしました
+2013-09-12 07:59:49 Debug: ログイン履歴を更新しました
+2013-09-12 08:00:56 Debug: 「admin_user1」がログインしました
+2013-09-12 08:00:56 Debug: ログイン履歴を更新しました
+2013-09-15 19:09:26 Debug: 「admin_user1」がログインしました
+2013-09-15 19:09:26 Debug: ログイン履歴を更新しました
+2013-09-15 19:20:10 Debug: Notice (8): Undefined index: BookMaster in [C:\xampp\htdocs\lib\app\Model\BookMaster.php, line 327]
+Trace:
+BookMaster::afterFind() - APP\Model\BookMaster.php, line 327
+CakeEventManager::dispatch() - CORE\Cake\Event\CakeEventManager.php, line 244
+Model::_filterResults() - CORE\Cake\Model\Model.php, line 2924
+Model::find() - CORE\Cake\Model\Model.php, line 2646
+PaginatorComponent::paginate() - CORE\Cake\Controller\Component\PaginatorComponent.php, line 185
+Controller::paginate() - CORE\Cake\Controller\Controller.php, line 1081
+BookMastersController::index() - APP\Controller\BookMastersController.php, line 37
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 485
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 186
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 161
+[main] - APP\webroot\index.php, line 92
+
+2013-09-15 20:00:34 Debug: Notice (8): Undefined index: BookMaster in [C:\xampp\htdocs\lib\app\Model\BookMaster.php, line 327]
+Trace:
+BookMaster::afterFind() - APP\Model\BookMaster.php, line 327
+CakeEventManager::dispatch() - CORE\Cake\Event\CakeEventManager.php, line 244
+Model::_filterResults() - CORE\Cake\Model\Model.php, line 2924
+Model::find() - CORE\Cake\Model\Model.php, line 2646
+PaginatorComponent::paginate() - CORE\Cake\Controller\Component\PaginatorComponent.php, line 185
+Controller::paginate() - CORE\Cake\Controller\Controller.php, line 1081
+BookMastersController::index() - APP\Controller\BookMastersController.php, line 37
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 485
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 186
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 161
+[main] - APP\webroot\index.php, line 92
+
