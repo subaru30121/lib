@@ -37,8 +37,13 @@
 		</dd>
 		<dt>シールの色</dt>
 		<dd>
+			<span style="background:<?php echo $bookMaster['Color']['code']; ?>">
 			<?php echo $bookMaster['Color']['code']; ?>
+			</span>
 			&nbsp;
+			<span style="background:<?php echo $bookMaster['Color2']['code']; ?>">
+			<?php echo $bookMaster['Color2']['code']; ?>
+			</span>
 		</dd>
 		<dt>分類</dt>
 		<dd>

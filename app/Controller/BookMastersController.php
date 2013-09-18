@@ -54,8 +54,10 @@ class BookMastersController extends AppController {
 		if ($this->Session->check('book_data')) {
 			// すでにデータが有る場合補填する
 			$this->request->data = $this->Session->read('book_data');
+			$this->Session->delete('book_data');
 		}
 		if ($this->request->is('post')) {
+/*
 			if (!empty($this->request->data['Color']['code'])) {
 				$this->Color->create();
 				$this->Color->set($this->request->data['Color']);
@@ -73,6 +75,7 @@ class BookMastersController extends AppController {
 					$this->request->data['BookMaster']['color_id'] = $_color_data['Color']['id'];
 				}
 			}
+*/
 			// 発行年の整形
 			$this->request->data['BookMaster']['publication_date'] = $this->BookMaster->createYear($this->request->data['BookMaster']['publication_date']);
 			// 分類の検索
@@ -90,7 +93,9 @@ class BookMastersController extends AppController {
 				$this->Session->setFlash('登録情報に不備があります。該当箇所を確認してください。');
 			}
 		}
-		$colors = $this->BookMaster->Color->find('list');
+		$colors = $this->Color->find('list');
+		$colors = $this->Color->addStyle($colors); // 背景色付与
+
 		$this->set(compact('colors'));
 	}
 
@@ -104,6 +109,7 @@ class BookMastersController extends AppController {
 		}
 		$this->request->data['BookMaster']['id'] = $id;
 		if ($this->request->is('post') || $this->request->is('put')) {
+/*
 			if (!empty($this->request->data['Color']['code'])) {
                                 $this->Color->create();
                                 $this->Color->set($this->request->data['Color']);
@@ -121,6 +127,7 @@ class BookMastersController extends AppController {
                                         $this->request->data['BookMaster']['color_id'] = $_color_data['Color']['id'];
                                 }
                         }
+*/
 			// 分類の検索
                         if (empty($this->request->data['BookMaster']['category'])) {
                                 $this->request->data['BookMaster']['category'] = $this->BookMaster->categorySearch($this->request->data['BookMaster']['claim_id']);
@@ -139,6 +146,7 @@ class BookMastersController extends AppController {
 			$this->request->data = $this->BookMaster->read(null, $id);
 		}
 		$colors = $this->BookMaster->Color->find('list');
+		$colors = $this->Color->addStyle($colors); // 背景色付与
 		$this->set(compact('colors'));
 	}
 
@@ -148,10 +156,27 @@ class BookMastersController extends AppController {
 			// データがない場合はトップページへ
 			$this->log('不正侵入：確認画面(book)', LOG_DEBUG);
 			$this->redirect(array('action' => 'index', 'controller' => 'management'));
+		} else {
+			$book_data = $this->Session->read('book_data');
+		}
+		// 色処理
+		$this->Color->recursive = 0;
+		if (!empty($book_data['BookMaster']['color_id'])) {
+			$color = $this->Color->find('first', array('conditions' => array('id' => $book_data['BookMaster']['color_id'])));
+			$book_data['Color']['code'] = $color['Color']['code'];
+		} else {
+			$book_data['Color']['code'] = null;
+		}
+		if (!empty($book_data['BookMaster']['color_id_2'])) {
+                        $color = $this->Color->find('first', array('conditions' => array('id' => $book_data['BookMaster']['color_id_2'])));
+                        $book_data['Color']['code_2'] = $color['Color']['code'];
+                } else {
+			$book_data['Color']['code_2'] = null;
 		}
 		$this->set('title_for_layout', "蔵書確認");
 		$this->set('back', $this->Session->read('back_url'));
-		$this->set('bookMaster', $this->Session->read('book_data'));
+		$this->set('bookMaster', $book_data);
+
 	}
 
 	// 蔵書登録

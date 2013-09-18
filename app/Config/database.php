@@ -64,7 +64,7 @@ class DATABASE_CONFIG {
 		'persistent' => false,
 		'host' => 'localhost',
 		'login' => 'root',
-		'password' => 'sakura1ro',
+		'password' => 'k6112271230',
 		'database' => 'library',
 		'prefix' => '',
 		'encoding' => 'utf8',

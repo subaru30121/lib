@@ -8,7 +8,9 @@ App::uses('AppModel', 'Model');
 class Color extends AppModel {
 	
 	public $useTable = 'color';
-
+	
+	public $displayField = 'code';
+	
 	public $validate = array(
 		'code' => array(
 			'custom' => array(
@@ -44,5 +46,23 @@ class Color extends AppModel {
 			'counterQuery' => ''
 		)
 	);
+
+	/**
+	* function addStyle
+	*
+	* selectboxの背景を追加
+	* find('list')のあとに呼ぶ
+	*/
+	public function addStyle($data) {
+		$results = array();
+		foreach($data as $key => $value) {
+			$result = array();
+			$result['name'] = $value;
+			$result['value'] = $key;
+			$result['style'] = 'background-color:'. $value;
+			$results[] = $result;
+		}
+		return $results;
+	}
 
 }

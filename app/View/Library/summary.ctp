@@ -28,11 +28,14 @@
 	<td><?php echo $this->Html->link(h($bookMaster['BookMaster']['book_name']), array('action' => 'view', $bookMaster['BookMaster']['id'])); ?></td>
 	<td><?php echo h($bookMaster['BookMaster']['author_name']); ?></td>
 	<td>
-	<?php if($bookMaster['BookMaster']['publication_date'] != '0000-00-00') : ?>
+	<?php if(!empty($bookMaster['BookMaster']['publication_date']) && $bookMaster['BookMaster']['publication_date'] != '0000-00-00') : ?>
 	<?php echo $this->Time->format('Y', $bookMaster['BookMaster']['publication_date']); ?>
 	<?php endif; ?>
 	</td>
-	<td><?php echo $bookMaster['Color']['code']; ?></td>
+	<td>
+		<p style="background:<?php echo $bookMaster['Color']['code']; ?>"><?php echo $bookMaster['Color']['code']; ?></p>
+		<p style="background:<?php echo $bookMaster['Color2']['code']; ?>"><?php echo $bookMaster['Color2']['code']; ?></p>
+	</td>
 </tr>
 <?php endforeach; ?>
 </table>

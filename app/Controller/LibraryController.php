@@ -49,7 +49,8 @@ class LibraryController extends AppController {
 
 		if (!empty($this->request->data['BookMaster']) && $this->Session->read('search_condition') != $this->request->data) {
 			// 条件が変わった場合
-                        // 蔵書条件が入力された時
+			// ページネイト条件のリセット
+			$this->request->params['named'] = array();
                         $this->Search->create();
                         $this->Search->set($this->data['BookMaster']);
                         // 年の配列解除

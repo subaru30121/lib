@@ -139,30 +139,41 @@ class BookMaster extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-/*
-		'status' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
-				'message' => '状態を選択してください',
-				//'allowEmpty' => false,
-				//'required' => false,
-				'last' => true, // Stop validation after this rule
-				'on' => 'update', // Limit validation to 'create' or 'update' operations
-			),
-			'inlist' => array(
-				'rule' => array('inlist', array(0, 1, 2)),
-				'message' => '正しい状態を選択してください',
-				//'allowEmpty' => false,
+
+		'category' => array(
+			'maxlength' => array(
+				'rule' => array('maxlength', 100),
+				'message' => '100文字以上入力できません',
+				'allowEmpty' => true,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				'on' => 'update', // Limit validation to 'create' or 'update' operations
 			),
 		),
-*/
+		'color_id' => array(
+			'naturalnumber' => array(
+                                'rule' => array('naturalnumber'),
+                                'message' => '数字を入力してください',
+                                'allowEmpty' => true,
+                                //'required' => false,
+                                //'last' => false, // Stop validation after this rule
+                                //'on' => 'create', // Limit validation to 'create' or 'update' operations
+                        ),
+                ),
+		'color_id_2' => array(
+			'naturalnumber' => array(
+                                'rule' => array('naturalnumber'),
+                                'message' => '正しい色コードを入力してください',
+                                'allowEmpty' => true,
+                                //'required' => false,
+                                //'last' => false, // Stop validation after this rule
+                                //'on' => 'create', // Limit validation to 'create' or 'update' operations
+                        ),
+                ),	
 		'page' => array(
 			'naturalnumber' => array(
 				'rule' => array('naturalnumber'),
-				'message' => '数字を入力してください',
+				'message' => '正しい色コードを入力してください',
 				'allowEmpty' => true,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -195,7 +206,14 @@ class BookMaster extends AppModel {
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
-		)
+		),
+		'Color2' => array(
+                        'className' => 'Color',
+                        'foreignKey' => 'color_id_2',
+                        'conditions' => '',
+                        'fields' => '',
+                        'order' => ''
+                ),
 	);
 
 	public function beforeValidate($options=array()) {
