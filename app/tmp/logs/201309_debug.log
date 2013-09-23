@@ -924,3 +924,130 @@ Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 186
 Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 161
 [main] - APP/webroot/index.php, line 92
 
+2013-09-18 15:35:43 Debug: 「iwasaki_admin」がログインしました
+2013-09-18 15:35:43 Debug: ログイン履歴を更新しました
+2013-09-18 15:35:50 Notice: Notice (8): Undefined index: BookMaster in [/var/www/html/lib/app/Model/BookMaster.php, line 345]
+Trace:
+BookMaster::afterFind() - APP/Model/BookMaster.php, line 345
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 244
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 2924
+Model::find() - CORE/Cake/Model/Model.php, line 2646
+PaginatorComponent::paginate() - CORE/Cake/Controller/Component/PaginatorComponent.php, line 185
+Controller::paginate() - CORE/Cake/Controller/Controller.php, line 1081
+BookMastersController::index() - APP/Controller/BookMastersController.php, line 37
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 485
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 186
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 161
+[main] - APP/webroot/index.php, line 92
+
+2013-09-18 15:35:53 Notice: Notice (8): Undefined index: BookMaster in [/var/www/html/lib/app/Model/BookMaster.php, line 345]
+Trace:
+BookMaster::afterFind() - APP/Model/BookMaster.php, line 345
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 244
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 2924
+Model::find() - CORE/Cake/Model/Model.php, line 2646
+PaginatorComponent::paginate() - CORE/Cake/Controller/Component/PaginatorComponent.php, line 185
+Controller::paginate() - CORE/Cake/Controller/Controller.php, line 1081
+BookMastersController::index() - APP/Controller/BookMastersController.php, line 37
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 485
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 186
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 161
+[main] - APP/webroot/index.php, line 92
+
+2013-09-18 15:35:53 Notice: Notice (8): Undefined index: BookMaster in [/var/www/html/lib/app/Model/BookMaster.php, line 345]
+Trace:
+BookMaster::afterFind() - APP/Model/BookMaster.php, line 345
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 244
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 2924
+Model::find() - CORE/Cake/Model/Model.php, line 2646
+PaginatorComponent::paginate() - CORE/Cake/Controller/Component/PaginatorComponent.php, line 185
+Controller::paginate() - CORE/Cake/Controller/Controller.php, line 1081
+BookMastersController::index() - APP/Controller/BookMastersController.php, line 37
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 485
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 186
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 161
+[main] - APP/webroot/index.php, line 92
+
+2013-09-23 12:48:10 Debug: 「admin_user1」がログインに失敗しました
+2013-09-23 12:48:48 Debug: 「iwasaki_admin」がログインしました
+2013-09-23 12:48:48 Debug: ログイン履歴を更新しました
+2013-09-23 12:49:07 Debug: 「iwasaki_admin」が以下の内容でユーザ登録しました
+admin_user1
+2013-09-23 12:49:23 Notice: Notice (8): Undefined index: BookMaster in [/var/www/html/lib/app/Model/BookMaster.php, line 345]
+Trace:
+BookMaster::afterFind() - APP/Model/BookMaster.php, line 345
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 244
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 2924
+Model::find() - CORE/Cake/Model/Model.php, line 2646
+PaginatorComponent::paginate() - CORE/Cake/Controller/Component/PaginatorComponent.php, line 185
+Controller::paginate() - CORE/Cake/Controller/Controller.php, line 1081
+BookMastersController::index() - APP/Controller/BookMastersController.php, line 37
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 485
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 186
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 161
+[main] - APP/webroot/index.php, line 92
+
+2013-09-23 12:49:26 Notice: Notice (8): Undefined index: BookMaster in [/var/www/html/lib/app/Model/BookMaster.php, line 345]
+Trace:
+BookMaster::afterFind() - APP/Model/BookMaster.php, line 345
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 244
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 2924
+Model::find() - CORE/Cake/Model/Model.php, line 2646
+PaginatorComponent::paginate() - CORE/Cake/Controller/Component/PaginatorComponent.php, line 185
+Controller::paginate() - CORE/Cake/Controller/Controller.php, line 1081
+BookMastersController::index() - APP/Controller/BookMastersController.php, line 37
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 485
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 186
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 161
+[main] - APP/webroot/index.php, line 92
+
+2013-09-23 12:49:27 Notice: Notice (8): Undefined index: BookMaster in [/var/www/html/lib/app/Model/BookMaster.php, line 345]
+Trace:
+BookMaster::afterFind() - APP/Model/BookMaster.php, line 345
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 244
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 2924
+Model::find() - CORE/Cake/Model/Model.php, line 2646
+PaginatorComponent::paginate() - CORE/Cake/Controller/Component/PaginatorComponent.php, line 185
+Controller::paginate() - CORE/Cake/Controller/Controller.php, line 1081
+BookMastersController::index() - APP/Controller/BookMastersController.php, line 37
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 485
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 186
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 161
+[main] - APP/webroot/index.php, line 92
+
+2013-09-23 13:03:28 Debug: 以下の内容で登録
+Array
+(
+    [BookMaster] => Array
+        (
+            [book_id] => 832672
+            [claim_id] => 473-1.5
+            [book_name] => test0919
+            [book_kana] => 
+            [author_name] => 
+            [author_kana] => 
+            [publisher_name] => 
+            [publisher_kana] => test
+            [publication_date] => Array
+                (
+                    [year] => 
+                    [month] => 
+                    [day] => 
+                )
+
+            [category] => 中央アフリカ共和国
+            [color_id] => 8
+            [color_id_2] => 16
+            [page] => 27
+            [annotation] => 
+            [id] => 3305
+        )
+
+)
+

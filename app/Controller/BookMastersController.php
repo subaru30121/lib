@@ -143,7 +143,13 @@ class BookMastersController extends AppController {
 				$this->Session->setFlash('登録情報に不備があります。該当箇所を確認してください。');
 			}
 		} else {
-			$this->request->data = $this->BookMaster->read(null, $id);
+			if ($this->Session->check('book_data')) {
+                        	// すでにデータが有る場合補填する
+                        	$this->request->data = $this->Session->read('book_data');
+                        	$this->Session->delete('book_data');
+                	} else {
+				$this->request->data = $this->BookMaster->read(null, $id);
+			}
 		}
 		$colors = $this->BookMaster->Color->find('list');
 		$colors = $this->Color->addStyle($colors); // 背景色付与
