@@ -1,0 +1,67 @@
+2013-09-25 10:28:57 Notice: Notice (8): Undefined offset: 1 in [/var/www/html/lib/lib/Cake/View/Helper/FormHelper.php, line 2364]
+Trace:
+FormHelper::_getDateTimeValue() - CORE/Cake/View/Helper/FormHelper.php, line 2364
+FormHelper::dateTime() - CORE/Cake/View/Helper/FormHelper.php, line 2217
+FormHelper::input() - CORE/Cake/View/Helper/FormHelper.php, line 1143
+include - APP/View/BookMasters/add.ctp, line 16
+View::_evaluate() - CORE/Cake/View/View.php, line 923
+View::_render() - CORE/Cake/View/View.php, line 886
+View::render() - CORE/Cake/View/View.php, line 476
+Controller::render() - CORE/Cake/Controller/Controller.php, line 956
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 161
+[main] - APP/webroot/index.php, line 92
+
+2013-09-25 11:00:27 Debug: 以下の内容で登録
+Array
+(
+    [BookMaster] => Array
+        (
+            [book_id] => 832749283
+            [claim_id] => 824-1.9
+            [book_name] => test0925
+            [book_kana] => 
+            [author_name] => 
+            [author_kana] => 
+            [publisher_name] => 
+            [publisher_kana] => 
+            [publication_date] => 
+            [color_id] => 13
+            [color_id_2] => 6
+            [page] => 333
+            [annotation] => 
+            [category] => カエデ科
+        )
+
+)
+
+2013-09-25 11:01:35 Debug: 以下の内容で登録
+Array
+(
+    [BookMaster] => Array
+        (
+            [book_id] => 832749283
+            [claim_id] => 824-1.9
+            [book_name] => test0925
+            [book_kana] => 
+            [author_name] => 
+            [author_kana] => 
+            [publisher_name] => 
+            [publisher_kana] => 
+            [publication_date] => Array
+                (
+                    [year] => 
+                    [month] => 
+                    [day] => 
+                )
+
+            [category] => カエデ科
+            [color_id] => 13
+            [color_id_2] => 10
+            [page] => 333
+            [annotation] => 
+            [id] => 3307
+        )
+
+)
+
