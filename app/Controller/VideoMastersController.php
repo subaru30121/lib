@@ -90,7 +90,13 @@ class VideoMastersController extends AppController {
 				$this->Session->setFlash('登録情報に不備があります。該当箇所を確認してください。');
 			}
 		} else {
-			$this->request->data = $this->VideoMaster->read(null, $id);
+			if ($this->Session->check('video_data')) {
+                                // すでにデータが有る場合補填する
+                                $this->request->data = $this->Session->read('video_data');
+                                $this->Session->delete('video_data');
+                        } else {
+                                $this->request->data = $this->VideoMaster->read(null, $id);
+                        }
 		}
 	}
 
