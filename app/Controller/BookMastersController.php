@@ -234,4 +234,58 @@ class BookMastersController extends AppController {
 			$this->redirect(array('action' => 'index'));
 		}
 	}
+	
+	// 点検初期化
+	public function checking_init() {
+		$this->autoRender = false;
+		$this->Session->delete('check_data');
+		$this->BookMaster->updateAll(array('check_flg' => 0));
+		$this->Session->setFlash('点検データを初期化しました');
+		$this->redirect(array('action' => 'checking'));		
+	}
+
+	// 点検
+	public function checking() {
+		$this->set('title_for_layout', "蔵書点検");
+		if ($this->request->is('post')) {
+			$this->BookMaster->recursive = -1;
+			$_data = $this->BookMaster->find('first', array('conditions' => array('book_id' => $this->request->data['BookMaster']['book_id'])));
+			if (!empty($_data)) {
+                       		$_data['BookMaster']['check_flg'] = 1;
+                        	if ($this->BookMaster->save($_data, false, array('check_flg'))) {
+					$this->Session->write('check_data', $_data);
+					$this->set('data', $_data);
+					$this->request->data = null;
+				} else {
+					$this->Session->setFlash('点検が反映されませんでした');
+				}
+			} else {
+				$this->Session->setFlash('該当する図書番号はありません');
+			}
+		}
+	}
+	
+	// 点検キャンセル
+	public function checking_return() {
+		$this->autoRender = false;
+		if (!$this->Session->check('check_data')) {
+			$this->Session->setFlash('蔵書が見つかりませんでした');
+		} else {
+			$_data = $this->Session->read('check_data');
+			$_data['BookMaster']['check_flg'] = 0;
+			if ($this->BookMaster->save($_data, false, array('check_flg'))) {
+				$this->Session->setFlash('キャンセルされました');
+			} else {
+				$this->Session->setFlash('キャンセルに失敗しました');
+			} 
+		}
+		$this->redirect(array('action' => 'checking'));
+	}
+
+	// 点検一覧
+	public function no_checked() {
+                $this->set('title_for_layout', "蔵書一覧");
+                $this->BookMaster->recursive = 0;
+                $this->set('bookMasters', $this->paginate('BookMaster', array('check_flg' => '0')));
+        }
 }

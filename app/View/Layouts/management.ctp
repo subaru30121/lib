@@ -50,6 +50,9 @@
 			<?php echo $this->HTML->link('映像登録', array('controller' => 'videoMasters', 'action' => 'add')); ?><br />
 			<?php echo $this->HTML->link('映像一覧', array('controller' => 'videoMasters', 'action' => 'index')); ?><br />
 			</div>
+			<div id="menuCheck">
+			<?php echo $this->HTML->link('点検', array('controller' => 'bookMasters', 'action' => 'checking')); ?><br />
+			</div>
 			</div> <!-- #menu -->
 		</div> <!-- #header -->
 		<div id="content">

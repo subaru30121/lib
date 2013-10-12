@@ -1,0 +1,147 @@
+2013-10-05 13:53:14 Error: [MissingControllerException] Controller class AdminAclController could not be found.
+#0 /var/www/html/lib/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-05 13:54:36 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE 1 = 1' at line 1
+#0 /var/www/html/lib/lib/Cake/Model/Datasource/DboSource.php(459): PDOStatement->execute(Array)
+#1 /var/www/html/lib/lib/Cake/Model/Datasource/DboSource.php(425): DboSource->_execute('UPDATE `library...', Array)
+#2 /var/www/html/lib/lib/Cake/Model/Datasource/Database/Mysql.php(360): DboSource->execute('UPDATE `library...')
+#3 /var/www/html/lib/lib/Cake/Model/Model.php(2343): Mysql->update(Object(BookMaster), Array, NULL, true)
+#4 /var/www/html/lib/app/Controller/BookMastersController.php(241): Model->updateAll(Array)
+#5 [internal function]: BookMastersController->checking_init()
+#6 /var/www/html/lib/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(BookMastersController), Array)
+#7 /var/www/html/lib/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#8 /var/www/html/lib/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(BookMastersController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/html/lib/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2013-10-05 14:08:40 Error: Fatal Error (1): Call to undefined method SessionComponent::setFlach() in [/var/www/html/lib/app/Controller/BookMastersController.php, line 242]
+2013-10-05 14:08:40 Error: [FatalErrorException] Call to undefined method SessionComponent::setFlach()
+#0 /var/www/html/lib/lib/Cake/Error/ErrorHandler.php(161): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/html/l...', 242)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/html/l...', 242, Array)
+#2 /var/www/html/lib/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/html/l...', 242, Array)
+#3 /var/www/html/lib/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-10-06 08:30:59 Error: Fatal Error (4): syntax error, unexpected '->' (T_OBJECT_OPERATOR), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in [/var/www/html/lib/app/Controller/BookMastersController.php, line 248]
+2013-10-06 08:30:59 Error: [FatalErrorException] syntax error, unexpected '->' (T_OBJECT_OPERATOR), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$'
+#0 /var/www/html/lib/lib/Cake/Error/ErrorHandler.php(161): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/l...', 248)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/l...', 248, Array)
+#2 /var/www/html/lib/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/l...', 248, Array)
+#3 /var/www/html/lib/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-10-06 08:31:53 Error: [MissingViewException] View file "/var/www/html/lib/app/View/BookMasters/checking.ctp" is missing.
+#0 /var/www/html/lib/lib/Cake/View/View.php(473): View->_getViewFileName(NULL)
+#1 /var/www/html/lib/lib/Cake/Controller/Controller.php(956): View->render(NULL, NULL)
+#2 /var/www/html/lib/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#3 /var/www/html/lib/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(BookMastersController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/lib/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-10-06 08:51:13 Error: Fatal Error (4): syntax error, unexpected 'debug' (T_STRING) in [/var/www/html/lib/app/Controller/BookMastersController.php, line 253]
+2013-10-06 08:51:13 Error: [FatalErrorException] syntax error, unexpected 'debug' (T_STRING)
+#0 /var/www/html/lib/lib/Cake/Error/ErrorHandler.php(161): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/l...', 253)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/l...', 253, Array)
+#2 /var/www/html/lib/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/l...', 253, Array)
+#3 /var/www/html/lib/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-10-06 09:24:11 Error: Fatal Error (4): syntax error, unexpected '{' in [/var/www/html/lib/app/Controller/BookMastersController.php, line 250]
+2013-10-06 09:24:11 Error: [FatalErrorException] syntax error, unexpected '{'
+#0 /var/www/html/lib/lib/Cake/Error/ErrorHandler.php(161): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/l...', 250)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/l...', 250, Array)
+#2 /var/www/html/lib/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/l...', 250, Array)
+#3 /var/www/html/lib/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-10-06 09:24:14 Error: Fatal Error (4): syntax error, unexpected '{' in [/var/www/html/lib/app/Controller/BookMastersController.php, line 250]
+2013-10-06 09:24:14 Error: [FatalErrorException] syntax error, unexpected '{'
+#0 /var/www/html/lib/lib/Cake/Error/ErrorHandler.php(161): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/l...', 250)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/l...', 250, Array)
+#2 /var/www/html/lib/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/l...', 250, Array)
+#3 /var/www/html/lib/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-10-06 09:24:31 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'id' in where clause is ambiguous
+#0 /var/www/html/lib/lib/Cake/Model/Datasource/DboSource.php(459): PDOStatement->execute(Array)
+#1 /var/www/html/lib/lib/Cake/Model/Datasource/DboSource.php(425): DboSource->_execute('UPDATE `library...', Array)
+#2 /var/www/html/lib/lib/Cake/Model/Datasource/Database/Mysql.php(360): DboSource->execute('UPDATE `library...')
+#3 /var/www/html/lib/lib/Cake/Model/Model.php(2343): Mysql->update(Object(BookMaster), Array, NULL, Array)
+#4 /var/www/html/lib/app/Controller/BookMastersController.php(252): Model->updateAll(Array, Array)
+#5 [internal function]: BookMastersController->checking()
+#6 /var/www/html/lib/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(BookMastersController), Array)
+#7 /var/www/html/lib/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#8 /var/www/html/lib/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(BookMastersController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/html/lib/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2013-10-06 09:25:53 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'id' in where clause is ambiguous
+#0 /var/www/html/lib/lib/Cake/Model/Datasource/DboSource.php(459): PDOStatement->execute(Array)
+#1 /var/www/html/lib/lib/Cake/Model/Datasource/DboSource.php(425): DboSource->_execute('UPDATE `library...', Array)
+#2 /var/www/html/lib/lib/Cake/Model/Datasource/Database/Mysql.php(360): DboSource->execute('UPDATE `library...')
+#3 /var/www/html/lib/lib/Cake/Model/Model.php(2343): Mysql->update(Object(BookMaster), Array, NULL, Array)
+#4 /var/www/html/lib/app/Controller/BookMastersController.php(253): Model->updateAll(Array, Array)
+#5 [internal function]: BookMastersController->checking()
+#6 /var/www/html/lib/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(BookMastersController), Array)
+#7 /var/www/html/lib/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#8 /var/www/html/lib/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(BookMastersController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/html/lib/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2013-10-06 09:50:12 Error: Fatal Error (1): Call to undefined method BookMastersController::setFlash() in [/var/www/html/lib/app/Controller/BookMastersController.php, line 264]
+2013-10-06 09:50:12 Error: [FatalErrorException] Call to undefined method BookMastersController::setFlash()
+#0 /var/www/html/lib/lib/Cake/Error/ErrorHandler.php(161): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/html/l...', 264)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/html/l...', 264, Array)
+#2 /var/www/html/lib/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/html/l...', 264, Array)
+#3 /var/www/html/lib/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-10-12 15:43:59 Error: [MissingControllerException] Controller class LibraryController could not be found.
+#0 /var/www/html/lib/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-12 15:50:39 Error: Fatal Error (4): syntax error, unexpected ';' in [/var/www/html/lib/app/Controller/BookMastersController.php, line 289]
+2013-10-12 15:50:39 Error: [FatalErrorException] syntax error, unexpected ';'
+#0 /var/www/html/lib/lib/Cake/Error/ErrorHandler.php(161): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/l...', 289)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/l...', 289, Array)
+#2 /var/www/html/lib/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/l...', 289, Array)
+#3 /var/www/html/lib/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-10-12 15:51:08 Error: [MissingActionException] Action BookMastersController::no-checked() could not be found.
+#0 /var/www/html/lib/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/lib/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(BookMastersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/lib/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-12 15:51:39 Error: Fatal Error (4): syntax error, unexpected '-', expecting '(' in [/var/www/html/lib/app/Controller/BookMastersController.php, line 286]
+2013-10-12 15:51:39 Error: [FatalErrorException] syntax error, unexpected '-', expecting '('
+#0 /var/www/html/lib/lib/Cake/Error/ErrorHandler.php(161): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/l...', 286)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/l...', 286, Array)
+#2 /var/www/html/lib/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/l...', 286, Array)
+#3 /var/www/html/lib/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-10-12 15:52:54 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'flg' in 'where clause'
+#0 /var/www/html/lib/lib/Cake/Model/Datasource/DboSource.php(459): PDOStatement->execute(Array)
+#1 /var/www/html/lib/lib/Cake/Model/Datasource/DboSource.php(425): DboSource->_execute('SELECT `BookMas...', Array)
+#2 /var/www/html/lib/lib/Cake/Model/Datasource/DboSource.php(669): DboSource->execute('SELECT `BookMas...', Array, Array)
+#3 /var/www/html/lib/lib/Cake/Model/Datasource/DboSource.php(1080): DboSource->fetchAll('SELECT `BookMas...', false)
+#4 /var/www/html/lib/lib/Cake/Model/Model.php(2642): DboSource->read(Object(BookMaster), Array)
+#5 /var/www/html/lib/lib/Cake/Controller/Component/PaginatorComponent.php(173): Model->find('all', Array)
+#6 /var/www/html/lib/lib/Cake/Controller/Controller.php(1081): PaginatorComponent->paginate('BookMaster', Array, Array)
+#7 /var/www/html/lib/app/Controller/BookMastersController.php(289): Controller->paginate('BookMaster', Array)
+#8 [internal function]: BookMastersController->no_checked()
+#9 /var/www/html/lib/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(BookMastersController), Array)
+#10 /var/www/html/lib/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#11 /var/www/html/lib/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(BookMastersController), Object(CakeRequest), Object(CakeResponse))
+#12 /var/www/html/lib/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2013-10-12 15:54:27 Error: [MissingViewException] View file "/var/www/html/lib/app/View/BookMasters/no_checked.ctp" is missing.
+#0 /var/www/html/lib/lib/Cake/View/View.php(473): View->_getViewFileName(NULL)
+#1 /var/www/html/lib/lib/Cake/Controller/Controller.php(956): View->render(NULL, NULL)
+#2 /var/www/html/lib/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#3 /var/www/html/lib/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(BookMastersController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/lib/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-10-12 15:57:42 Error: [MissingViewException] View file "/var/www/html/lib/app/View/BookMasters/no_checked.ctp" is missing.
+#0 /var/www/html/lib/lib/Cake/View/View.php(473): View->_getViewFileName(NULL)
+#1 /var/www/html/lib/lib/Cake/Controller/Controller.php(956): View->render(NULL, NULL)
+#2 /var/www/html/lib/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#3 /var/www/html/lib/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(BookMastersController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/lib/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}

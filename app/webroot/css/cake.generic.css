@@ -143,6 +143,11 @@ ul, li {
 	float: left;
 }
 
+#menuCheck{
+	margin: 2px 7px;
+	float: left;
+}
+
 #content{
 	height: 400px;
 	background-color: #FDF6CB;
